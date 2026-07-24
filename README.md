@@ -100,9 +100,12 @@ This portfolio is optimized for deployment on **Vercel**:
 
 ---
 
-## 🤝 Contact & Connect
+## 🤝 Live Demo & Connect
 
-- **GitHub:** [@harshit-1318](https://github.com/harshit-1318)
+- 🌐 **Live Website:** [harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app)
+- 🐙 **GitHub:** [@harshit-1318](https://github.com/harshit-1318)
+- 💼 **LinkedIn:** [harshit-kumar](https://www.linkedin.com/in/harshit-kumar)
+- 📧 **Email:** [kumarharshit370@gmail.com](mailto:kumarharshit370@gmail.com)
 
 ---
 
