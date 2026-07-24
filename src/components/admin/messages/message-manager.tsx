@@ -16,9 +16,14 @@ export function MessageManager() {
     handleDelete,
   } = useMessageManager();
 
+  const unreadCount = messages.filter((m) => !m.read).length;
+
   return (
     <div className="space-y-6">
-      <MessageHeader />
+      <MessageHeader
+        totalCount={messages.length}
+        unreadCount={unreadCount}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">

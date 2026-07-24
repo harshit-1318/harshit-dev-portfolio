@@ -1,5 +1,6 @@
 "use client";
 
+import { Award, Building2, Calendar, Link as LinkIcon, FileText, Hash } from "lucide-react";
 import type { ICertificate } from "@/types";
 
 interface CertificateFormFieldsProps {
@@ -12,77 +13,102 @@ export function CertificateFormFields({
   setFormData,
 }: CertificateFormFieldsProps) {
   return (
-    <>
+    <div className="space-y-4">
+      {/* Title & Organization */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-foreground">Title</label>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <Award className="w-3.5 h-3.5 text-primary" />
+            Title <span className="text-destructive">*</span>
+          </label>
           <input
             type="text"
             value={formData.title || ''}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
             required
-            className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
-            placeholder="e.g. Google Cloud GenAI"
+            className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all"
+            placeholder="e.g. AWS Certified Solutions Architect"
           />
         </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-foreground">Organization</label>
+
+        <div className="space-y-1.5">
+          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <Building2 className="w-3.5 h-3.5 text-primary" />
+            Organization <span className="text-destructive">*</span>
+          </label>
           <input
             type="text"
             value={formData.organization || ''}
             onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
             required
-            className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
-            placeholder="e.g. Google Cloud"
+            className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all"
+            placeholder="e.g. Amazon Web Services"
           />
         </div>
       </div>
 
+      {/* Date & Order */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-foreground">Issue Date</label>
+        <div className="space-y-1.5">
+          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-primary" />
+            Issue Date <span className="text-destructive">*</span>
+          </label>
           <input
             type="date"
-            value={formData.issueDate || ''}
+            value={formData.issueDate ? formData.issueDate.split('T')[0] : ''}
             onChange={(e) => setFormData({ ...formData, issueDate: e.target.value })}
             required
-            className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
+            className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all"
           />
         </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-foreground">Display Order</label>
+
+        <div className="space-y-1.5">
+          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <Hash className="w-3.5 h-3.5 text-primary" />
+            Display Order
+          </label>
           <input
             type="number"
             value={formData.order || 1}
             onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 1 })}
             required
-            className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
+            min={1}
+            className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all"
             placeholder="1"
           />
         </div>
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-foreground">Credential URL</label>
+      {/* Credential URL */}
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <LinkIcon className="w-3.5 h-3.5 text-primary" />
+          Credential URL (Optional)
+        </label>
         <input
           type="url"
           value={formData.credentialUrl || ''}
           onChange={(e) => setFormData({ ...formData, credentialUrl: e.target.value })}
-          className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
-          placeholder="https://..."
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all"
+          placeholder="https://credly.com/your-badge-id"
         />
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-sm font-medium text-foreground">Description (Optional)</label>
+      {/* Description */}
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <FileText className="w-3.5 h-3.5 text-primary" />
+          Description (Optional)
+        </label>
         <textarea
           value={formData.description || ''}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           rows={3}
-          className="w-full px-4 py-2.5 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground resize-none"
-          placeholder="Brief summary of the certification criteria or context"
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-sm transition-all resize-none"
+          placeholder="Brief summary of skills verified or exam topics covered..."
         />
       </div>
-    </>
+    </div>
   );
 }

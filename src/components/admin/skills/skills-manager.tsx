@@ -33,7 +33,10 @@ export function SkillsManager() {
 
   return (
     <div className="space-y-6">
-      <SkillsHeader onAdd={() => { resetForm(); setShowForm(true); }} />
+      <SkillsHeader
+        onAdd={() => { resetForm(); setShowForm(true); }}
+        totalCount={skills.length}
+      />
 
       {showForm && (
         <SkillsForm
@@ -54,6 +57,7 @@ export function SkillsManager() {
         groupedSkills={groupedSkills}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        onAdd={() => { resetForm(); setShowForm(true); }}
       />
     </div>
   );

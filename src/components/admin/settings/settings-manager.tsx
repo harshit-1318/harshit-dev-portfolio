@@ -1,6 +1,6 @@
 "use client";
 
-import { Save } from 'lucide-react';
+import { Save, Loader2 } from 'lucide-react';
 import { PersonalDetailsForm } from './personal-details-form';
 import { BrandingForm } from './branding-form';
 import { IntegrationsForm } from './integrations-form';
@@ -12,9 +12,10 @@ export function SettingsManager() {
 
   if (loading) {
     return (
-      <div className="space-y-6 animate-pulse">
-        <div className="h-8 bg-muted rounded w-48" />
-        <div className="anime-card rounded-2xl p-6 h-96" />
+      <div className="space-y-6 max-w-4xl animate-pulse">
+        <div className="h-10 bg-muted rounded-xl w-64" />
+        <div className="rounded-2xl p-6 h-72 bg-card/40 border border-border/40" />
+        <div className="rounded-2xl p-6 h-48 bg-card/40 border border-border/40" />
       </div>
     );
   }
@@ -28,14 +29,23 @@ export function SettingsManager() {
         <BrandingForm profile={profile} setProfile={setProfile} />
         <IntegrationsForm profile={profile} setProfile={setProfile} />
 
-        <div className="flex items-center gap-3 justify-end">
+        <div className="flex items-center gap-3 justify-end pt-2">
           <button
             type="submit"
             disabled={saving}
-            className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-xl hover:opacity-90 transition cursor-pointer disabled:opacity-50 flex items-center gap-2"
+            className="px-6 py-3 bg-linear-to-r from-primary to-primary/90 text-primary-foreground font-bold rounded-xl hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-50 flex items-center gap-2 text-sm shadow-md"
           >
-            <Save className="w-4.5 h-4.5" />
-            {saving ? 'Saving...' : 'Save Changes'}
+            {saving ? (
+              <>
+                <Loader2 className="w-4.5 h-4.5 animate-spin" />
+                <span>Saving Settings...</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-4.5 h-4.5" />
+                <span>Save All Settings</span>
+              </>
+            )}
           </button>
         </div>
       </form>

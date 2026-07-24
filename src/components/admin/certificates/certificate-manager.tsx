@@ -23,7 +23,10 @@ export function CertificateManager() {
 
   return (
     <div className="space-y-6">
-      <CertificateHeader onAdd={() => { resetForm(); setShowForm(true); }} />
+      <CertificateHeader
+        onAdd={() => { resetForm(); setShowForm(true); }}
+        totalCount={certificates.length}
+      />
 
       {showForm && (
         <CertificateForm
@@ -41,6 +44,7 @@ export function CertificateManager() {
         certificates={certificates}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        onAdd={() => { resetForm(); setShowForm(true); }}
       />
     </div>
   );

@@ -18,50 +18,58 @@ export function EducationFormFields({
 }: EducationFormFieldsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="space-y-2">
-        <label className="block text-xs font-medium text-muted-foreground">Institution Name</label>
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
+          Institution Name <span className="text-destructive">*</span>
+        </label>
         <input
           type="text"
           required
           value={eduFormData.institution || ''}
           onChange={(e) => setEduFormData({ ...eduFormData, institution: e.target.value })}
-          className="w-full px-3.5 py-2 bg-muted border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-xs text-foreground"
-          placeholder="e.g. St. Aerjay Public School"
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-xs transition-all"
+          placeholder="e.g. St. Xavier's University"
         />
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-xs font-medium text-muted-foreground">Degree / Standard</label>
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
+          Degree / Qualification <span className="text-destructive">*</span>
+        </label>
         <input
           type="text"
           required
           value={eduFormData.degree || ''}
           onChange={(e) => setEduFormData({ ...eduFormData, degree: e.target.value })}
-          className="w-full px-3.5 py-2 bg-muted border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-xs text-foreground"
-          placeholder="e.g. 12th, Science"
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-xs transition-all"
+          placeholder="e.g. B.Tech Computer Science"
         />
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-xs font-medium text-muted-foreground">Period / Timeline</label>
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
+          Period / Timeline <span className="text-destructive">*</span>
+        </label>
         <input
           type="text"
           required
           value={eduFormData.period || ''}
           onChange={(e) => setEduFormData({ ...eduFormData, period: e.target.value })}
-          className="w-full px-3.5 py-2 bg-muted border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-xs text-foreground"
-          placeholder="e.g. Mar 2020 – Jun 2022"
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-xs transition-all"
+          placeholder="e.g. 2021 – 2025"
         />
       </div>
 
-      <div className="space-y-2">
-        <label className="block text-xs font-medium text-muted-foreground">Grade / Score (Optional)</label>
+      <div className="space-y-1.5">
+        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
+          Grade / Score (Optional)
+        </label>
         <input
           type="text"
           value={eduFormData.grade || ''}
           onChange={(e) => setEduFormData({ ...eduFormData, grade: e.target.value })}
-          className="w-full px-3.5 py-2 bg-muted border border-border rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-xs text-foreground"
-          placeholder="e.g. 87% or 8.5 CGPA"
+          className="w-full px-3.5 py-2.5 bg-muted/50 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 text-foreground text-xs transition-all"
+          placeholder="e.g. 8.9 CGPA / 88%"
         />
       </div>
 

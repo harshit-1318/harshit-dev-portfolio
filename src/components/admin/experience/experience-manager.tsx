@@ -27,7 +27,10 @@ export function ExperienceManager() {
 
   return (
     <div className="space-y-6">
-      <ExperienceHeader onAdd={() => { resetForm(); setShowForm(true); }} />
+      <ExperienceHeader
+        onAdd={() => { resetForm(); setShowForm(true); }}
+        totalCount={experiences.length}
+      />
 
       {showForm && (
         <ExperienceForm
@@ -49,6 +52,7 @@ export function ExperienceManager() {
         experiences={experiences}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        onAdd={() => { resetForm(); setShowForm(true); }}
       />
     </div>
   );

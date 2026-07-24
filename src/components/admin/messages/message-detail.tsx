@@ -1,6 +1,7 @@
 "use client";
 
-import { Calendar, Eye, Mail, Trash2, X } from "lucide-react";
+import { Calendar, Eye, Mail, Trash2, X, Send, User, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import type { IMessage } from "./message-list";
 
 interface MessageDetailProps {
@@ -18,71 +19,102 @@ export function MessageDetail({
 }: MessageDetailProps) {
   if (!selectedMessage) {
     return (
-      <div className="anime-card rounded-2xl p-8 sticky top-28 text-center border border-dashed border-border/60">
-        <Eye className="w-8 h-8 text-muted-foreground mx-auto mb-2 opacity-50" />
-        <p className="text-sm text-muted-foreground">Select a message from the list to view full details.</p>
+      <div className="rounded-2xl p-10 sticky top-24 text-center border border-dashed border-border/80 bg-card/40 backdrop-blur-sm flex flex-col items-center justify-center">
+        <div className="w-12 h-12 rounded-2xl bg-muted/60 flex items-center justify-center text-muted-foreground mb-3">
+          <Eye className="w-6 h-6 opacity-60" />
+        </div>
+        <h4 className="text-sm font-bold text-foreground mb-1">No Message Selected</h4>
+        <p className="text-xs text-muted-foreground max-w-xs leading-relaxed">
+          Select a message from your inbox on the left to read its full content and respond.
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="anime-card rounded-2xl p-6 sticky top-28 space-y-4">
-      <div className="flex items-start justify-between">
-        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Mail className="w-5 h-5 text-primary" />
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }}
+      className="relative rounded-2xl p-6 sticky top-24 border border-border/80 bg-card/80 backdrop-blur-md shadow-xl space-y-5 overflow-hidden"
+    >
+      {/* Top accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-blue-500 to-cyan-500" />
+
+      {/* Header */}
+      <div className="flex items-start justify-between gap-3 pb-3 border-b border-border/50">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0 shadow-xs">
+            <Mail className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="text-base font-bold font-heading text-foreground leading-tight">
+              {selectedMessage.subject}
+            </h3>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-1 font-medium">
+              <Calendar className="w-3.5 h-3.5 text-primary" />
+              {new Date(selectedMessage.createdAt).toLocaleString()}
+            </div>
+          </div>
         </div>
+
         <button
           onClick={() => setSelectedMessage(null)}
-          className="text-muted-foreground hover:text-foreground transition cursor-pointer"
+          className="w-8 h-8 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition cursor-pointer"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4.5 h-4.5" />
         </button>
       </div>
 
-      <div>
-        <h3 className="text-lg font-bold text-foreground font-[family-name:var(--font-heading)]">
-          {selectedMessage.subject}
-        </h3>
-        <div className="flex items-center gap-1.5 text-xs text-muted-foreground mt-2">
-          <Calendar className="w-3.5 h-3.5" />
-          {new Date(selectedMessage.createdAt).toLocaleString()}
+      {/* Sender metadata card */}
+      <div className="p-3.5 bg-muted/40 rounded-xl space-y-1.5 text-xs border border-border/50">
+        <div className="flex items-center gap-2 text-foreground font-semibold">
+          <User className="w-3.5 h-3.5 text-primary" />
+          <span>{selectedMessage.name}</span>
         </div>
-      </div>
-
-      <div className="p-3 bg-muted/50 rounded-xl space-y-1 text-sm border border-border/30">
-        <div className="text-muted-foreground">
-          From: <span className="font-semibold text-foreground">{selectedMessage.name}</span>
-        </div>
-        <div className="text-muted-foreground">
-          Email:{' '}
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Mail className="w-3.5 h-3.5 text-muted-foreground/70" />
           <a
-            href={`mailto:${selectedMessage.email}`}
-            className="text-primary hover:underline"
+            href={`mailto:${selectedMessage.email}?subject=Re: ${encodeURIComponent(selectedMessage.subject)}`}
+            className="text-primary hover:underline font-mono"
           >
             {selectedMessage.email}
           </a>
         </div>
       </div>
 
-      <div className="text-sm text-foreground whitespace-pre-wrap leading-relaxed pt-2">
+      {/* Message content */}
+      <div className="text-xs sm:text-sm text-foreground whitespace-pre-wrap leading-relaxed p-4 rounded-xl bg-background/50 border border-border/40 min-h-32">
         {selectedMessage.message}
       </div>
 
-      <div className="pt-4 border-t border-border flex items-center justify-between">
-        <button
-          onClick={() => handleMarkRead(selectedMessage._id, !selectedMessage.read)}
-          className="px-3.5 py-1.5 bg-muted text-foreground hover:bg-muted/80 rounded-xl transition text-xs font-semibold cursor-pointer"
-        >
-          Mark as {selectedMessage.read ? 'Unread' : 'Read'}
-        </button>
+      {/* Bottom actions */}
+      <div className="pt-3 border-t border-border/50 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => handleMarkRead(selectedMessage._id, !selectedMessage.read)}
+            className="px-3 py-2 bg-muted hover:bg-muted/80 text-foreground rounded-xl transition text-xs font-semibold cursor-pointer flex items-center gap-1.5"
+          >
+            <CheckCircle className="w-3.5 h-3.5 text-primary" />
+            <span>Mark as {selectedMessage.read ? 'Unread' : 'Read'}</span>
+          </button>
+          <a
+            href={`mailto:${selectedMessage.email}?subject=Re: ${encodeURIComponent(selectedMessage.subject)}`}
+            className="px-3.5 py-2 bg-primary text-primary-foreground hover:shadow-md rounded-xl transition text-xs font-semibold cursor-pointer flex items-center gap-1.5"
+          >
+            <Send className="w-3.5 h-3.5" />
+            <span>Reply Email</span>
+          </a>
+        </div>
+
         <button
           onClick={() => handleDelete(selectedMessage._id)}
-          className="px-3.5 py-1.5 bg-destructive/15 text-destructive hover:bg-destructive/25 rounded-xl transition text-xs font-semibold cursor-pointer flex items-center gap-1"
+          className="px-3 py-2 bg-destructive/10 text-destructive hover:bg-destructive/20 rounded-xl transition text-xs font-semibold cursor-pointer flex items-center gap-1.5"
         >
           <Trash2 className="w-3.5 h-3.5" />
-          Delete
+          <span>Delete</span>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
