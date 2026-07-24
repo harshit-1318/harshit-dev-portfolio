@@ -1,0 +1,20 @@
+/* ══════════════════════════════════════════════════════
+   SKIP LINK — Accessible Skip to Main Content Link
+   ══════════════════════════════════════════════════════ */
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  color: var(--color-primary-foreground);
+  background: var(--color-primary);
+  transform: translateY(-160%);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

@@ -1,0 +1,51 @@
+/* ══════════════════════════════════════════════════════
+   HERO STAGE — IDE Container, Halo & Base
+   ══════════════════════════════════════════════════════ */
+
+.hero-stage {
+  perspective: 900px;
+}
+
+.hero-stage__halo {
+  position: absolute;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--spatial-violet) 13%, transparent), transparent 58%),
+    conic-gradient(from 90deg, transparent, color-mix(in srgb, var(--spatial-cyan) 15%, transparent), transparent 36%);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 16%, transparent);
+  filter: drop-shadow(0 20px 50px color-mix(in srgb, var(--color-primary) 12%, transparent));
+  animation: halo-turn 24s linear infinite;
+}
+
+.hero-stage__halo::before,
+.hero-stage__halo::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--spatial-cyan) 26%, transparent);
+}
+
+.hero-stage__halo::after {
+  inset: 26%;
+  border-style: solid;
+}
+
+.hero-stage__base {
+  position: absolute;
+  bottom: 8%;
+  width: 64%;
+  height: 16%;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--color-primary) 20%, transparent), transparent 65%);
+  transform: rotateX(68deg);
+  box-shadow: 0 0 44px color-mix(in srgb, var(--color-primary) 16%, transparent);
+}
+
+@keyframes halo-turn {
+  to { transform: rotate(360deg); }
+}

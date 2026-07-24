@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Programming Languages",
+      "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"]
+    },
+    {
+      "name": "Frontend",
+      "items": ["React.js", "Astro", "Vite", "Tailwind CSS", "Bootstrap", "React Hooks", "Context API", "Zustand"]
+    },
+    {
+      "name": "API & State",
+      "items": ["REST APIs", "Axios", "TanStack Query", "TanStack Table"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Node.js", "Express.js", "NestJS"]
+    },
+    {
+      "name": "Database",
+      "items": ["MongoDB", "MySQL"]
+    },
+    {
+      "name": "Tools",
+      "items": ["Git", "GitHub", "Postman", "Vercel", "Shopify APIs"]
+    }
+  ]
+}

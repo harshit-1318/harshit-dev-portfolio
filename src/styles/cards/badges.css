@@ -1,0 +1,16 @@
+/* ══════════════════════════════════════════════════════
+   CARD BADGES — LinkedIn & Platform Badges
+   ══════════════════════════════════════════════════════ */
+
+.linkedin-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(10, 102, 194, 0.3);
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  color: #4ea1f3;
+  background: rgba(10, 102, 194, 0.1);
+  font-size: 0.7rem;
+  font-weight: 600;
+}

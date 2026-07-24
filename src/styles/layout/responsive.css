@@ -1,0 +1,59 @@
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — Layout Media Queries
+   ══════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .home-hero {
+    padding-top: 6.5rem;
+  }
+
+  .home-hero::before {
+    inset: 4% 1% 2%;
+  }
+
+  .floating-chip--top { right: 4%; }
+  .floating-chip--bottom { left: 4%; }
+}
+
+@media (max-width: 639px) {
+  .spatial-world {
+    opacity: 0.48;
+    transform: scale(1.08);
+  }
+
+  .home-hero {
+    min-height: auto !important;
+    padding-top: 7.5rem;
+  }
+
+  .home-hero::before {
+    inset: 1rem 0 0;
+    border-radius: 26px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.1rem, 15vw, 4.5rem);
+  }
+
+  .hero-stage {
+    height: 390px;
+    margin-top: -1rem;
+  }
+
+  .floating-chip {
+    font-size: 0.55rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .floating-chip--top { top: 12%; right: 0; }
+  .floating-chip--bottom { bottom: 14%; left: 0; }
+
+  main > section:first-child:not(.home-hero) {
+    min-height: 270px;
+  }
+
+  main > section:first-child:not(.home-hero)::before {
+    inset-inline: 8px;
+    border-radius: 26px;
+  }
+}

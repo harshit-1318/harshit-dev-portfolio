@@ -1,0 +1,8 @@
+/* ══════════════════════════════════════════════════════
+   RESET — Modular Entry Point
+   Imports base element reset sub-modules from ./reset/
+   ══════════════════════════════════════════════════════ */
+
+@import "./reset/elements.css";
+@import "./reset/accessibility.css";
+@import "./reset/skip-link.css";

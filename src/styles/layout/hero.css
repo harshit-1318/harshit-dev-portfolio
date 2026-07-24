@@ -1,0 +1,54 @@
+/* ══════════════════════════════════════════════════════
+   HERO — Container, Eyebrow, Status dot & Headings
+   ══════════════════════════════════════════════════════ */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--spatial-cyan);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--spatial-cyan) 12%, transparent), 0 0 16px var(--spatial-cyan);
+}
+
+.home-hero {
+  isolation: isolate;
+  min-height: clamp(640px, 100svh, 920px) !important;
+}
+
+.home-hero::before {
+  content: "";
+  display: none;
+}
+
+.hero-title {
+  max-width: 850px;
+  text-wrap: balance;
+  text-shadow: 0 18px 54px color-mix(in srgb, var(--color-primary) 9%, transparent);
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, var(--color-foreground) 0%, var(--color-muted-foreground) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-role {
+  padding: 0.65rem 0.9rem;
+  border-left: 1px solid var(--color-primary);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent);
+}

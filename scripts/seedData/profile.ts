@@ -1,0 +1,16 @@
+export const profileData = {
+  name: "Harshit",
+  title: "Frontend Developer",
+  bio: "Frontend Developer with 9+ months of hands-on experience building production web applications using React.js, TypeScript, Astro, Vite, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components, integrating RESTful APIs, and delivering responsive, accessible user interfaces.",
+  email: "kumarharshit370@gmail.com",
+  phone: "+91-7814283095",
+  location: "Jalandhar, Punjab, India",
+  logoColor1: "#6366f1",
+  logoColor2: "#22d3ee",
+  linkedinUrl: "https://www.linkedin.com/in/harshit-kumar",
+  githubUrl: "https://github.com/harshit-1318",
+  githubUsername: "harshit-1318",
+  leetcodeUrl: "",
+  leetcodeUsername: "",
+  resumeUrl: "/resume/Resume_Harshit.pdf",
+};

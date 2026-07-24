@@ -1,0 +1,66 @@
+/* ══════════════════════════════════════════════════════
+   HERO DECORATIONS — Floating Chips & Orbit Rings
+   ══════════════════════════════════════════════════════ */
+
+.floating-chip {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  color: var(--color-muted-foreground);
+  background: color-mix(in srgb, var(--color-card) 82%, transparent);
+  box-shadow: 0 18px 50px var(--surface-shadow);
+  backdrop-filter: blur(18px);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.floating-chip span {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.floating-chip--top {
+  top: 18%;
+  right: 0;
+  animation: chip-float 6s ease-in-out infinite;
+}
+
+.floating-chip--bottom {
+  bottom: 18%;
+  left: 0;
+  animation: chip-float 6s 1.5s ease-in-out infinite;
+}
+
+@keyframes chip-float {
+  0%, 100% { transform: translateY(0) rotate(0.5deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+.hero-orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-orbit--one {
+  width: 52vw;
+  height: 52vw;
+  right: -31vw;
+  top: -24vw;
+}
+
+.hero-orbit--two {
+  width: 24vw;
+  height: 24vw;
+  left: -16vw;
+  bottom: -8vw;
+}

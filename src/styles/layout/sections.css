@@ -1,0 +1,55 @@
+/* ══════════════════════════════════════════════════════
+   SECTIONS — Inner-page Headers & Section Dividers
+   ══════════════════════════════════════════════════════ */
+
+main > section:first-child:not(.home-hero) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+}
+
+main > section:first-child:not(.home-hero)::before {
+  content: "";
+  display: none;
+}
+
+main > section:first-child:not(.home-hero)::after {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  right: 8%;
+  top: -46%;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 48px color-mix(in srgb, var(--color-primary) 3%, transparent),
+    0 0 0 96px color-mix(in srgb, var(--color-primary) 2%, transparent);
+}
+
+main > section:first-child:not(.home-hero) h1 {
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+main > section:not(:first-child) {
+  position: relative;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+main > section:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  inset-inline: max(4vw, 1rem);
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  pointer-events: none;
+}

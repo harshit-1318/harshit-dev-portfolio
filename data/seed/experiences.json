@@ -1,0 +1,19 @@
+[
+  {
+    "company": "CSharma Consultancy",
+    "role": "Frontend Developer",
+    "type": "Full-time",
+    "location": "Jalandhar, Punjab (On-site)",
+    "startDate": "Oct 2025",
+    "endDate": "Jun 2026",
+    "current": false,
+    "bullets": [
+      "Architected core frontend modules for the YourMedicals Prescriber Portal, delivering responsive UI components and interactive clinical workflows.",
+      "Engineered an Order Management Dashboard with multi-column filtering, pagination, and real-time search utilizing TanStack Table.",
+      "Integrated secure REST APIs via Axios and optimized client-side state caching using TanStack Query to streamline network data fetching.",
+      "Collaborated in cross-functional Agile sprints with backend engineers, designers, and QA teams to ship production-ready features on schedule."
+    ],
+    "technologies": ["React.js", "TypeScript", "Astro", "Vite", "Tailwind CSS", "TanStack Table", "TanStack Query", "Axios", "Git"],
+    "order": 1
+  }
+]

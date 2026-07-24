@@ -1,0 +1,25 @@
+﻿/* ══════════════════════════════════════════════════════
+   globals.css — Entry point.  All styles are split into
+   focused partials inside src/styles/.
+   ══════════════════════════════════════════════════════ */
+
+/* 1. Tokens, fonts, Tailwind, dark-mode vars */
+@import "../styles/base.css";
+
+/* 2. Element reset, body, scrollbar, skip-link */
+@import "../styles/reset.css";
+
+/* 3. Reusable UI components (cards, buttons, badges…) */
+@import "../styles/components.css";
+
+/* 4. Spatial background system (aurora, grid, orbs) */
+@import "../styles/spatial.css";
+
+/* 5. Page layout (navbar, hero, hero-stage, orbit rings) */
+@import "../styles/layout.css";
+
+/* 6. Content cards (project cards, blog orbit cards) */
+@import "../styles/cards.css";
+
+/* 7. Footer & chat FAB */
+@import "../styles/footer.css";

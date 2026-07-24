@@ -1,0 +1,226 @@
+{
+  "admin": {
+    "name": "Harshit",
+    "email": "kumarharshit370@gmail.com",
+    "password": "adminpassword123"
+  },
+  "profile": {
+    "name": "Harshit",
+    "title": "Frontend Developer",
+    "bio": "Frontend Developer with 9+ Months of hands-on experience building production web applications using React, TypeScript, Astro, Next.js, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components, integrating RESTful APIs, and delivering responsive, accessible user interfaces.",
+    "email": "kumarharshit370@gmail.com",
+    "phone": "+91-7814283095",
+    "location": "Jalandhar, Punjab, India",
+    "logoColor1": "#6366f1",
+    "logoColor2": "#22d3ee",
+    "linkedinUrl": "https://www.linkedin.com/in/harshit-kumar",
+    "githubUrl": "https://github.com/harshit-1318",
+    "githubUsername": "harshit-1318",
+    "leetcodeUrl": "",
+    "leetcodeUsername": "",
+    "resumeUrl": "/resume/Resume_Harshit.pdf",
+    "bookingUrl": "https://calendly.com/kumarharshit370"
+  },
+  "projects": [
+    {
+      "title": "YourMedicals Prescriber Portal",
+      "slug": "yourmedicals-portal",
+      "description": "Engineered frontend modules of a live healthcare prescriber portal for a UK-based client, delivering reusable components and responsive layouts.",
+      "longDescription": "Engineered the frontend of the production-ready YourMedicals Prescriber Portal for a UK-based healthcare client, delivering reusable components, responsive layouts, and a seamless user experience. Architected secure REST API integrations using Axios and TanStack Query, streamlining data fetching and state management to boost application performance and reliability.",
+      "techStack": ["Astro", "React.js", "TypeScript", "Tailwind CSS", "Axios", "TanStack Query"],
+      "features": [
+        "Production-ready healthcare prescriber portal for UK client",
+        "Reusable UI components and responsive layouts ensuring cross-device consistency",
+        "Secure REST API integrations with optimized data fetching/caching",
+        "Seamless user experience and robust state management"
+      ],
+      "githubUrl": "",
+      "liveUrl": "",
+      "category": "WebApp",
+      "featured": true,
+      "order": 1,
+      "image": "/yourmedicals_preview.png",
+      "metrics": {
+        "latency": "120ms (API)",
+        "efficiency": "40% faster data fetching",
+        "components": "30+ reusable UI components",
+        "testCoverage": "95% layout consistency"
+      },
+      "challenges": "Integrating real-time medical prescriber data while maintaining low-latency layout rendering and state synchronization across multiple views.",
+      "solutions": "Implemented caching and prefetching strategies with TanStack Query. Built modular React components styled with Tailwind CSS, compiled using Vite to ensure optimal browser execution speeds.",
+      "architectureSteps": [
+        { "title": "Layout Construction", "description": "Vite compiles React/Astro pages with Tailwind CSS utility styles." },
+        { "title": "API Integration", "description": "Axios requests securely fetch prescriber data from the backend portal." },
+        { "title": "Data Caching", "description": "TanStack Query handles caching and automated validation of clinical endpoints." },
+        { "title": "Component Rendering", "description": "Modular UI elements dynamically render patient dashboards and order workflows." }
+      ]
+    },
+    {
+      "title": "EventElite",
+      "slug": "eventelite",
+      "description": "A full-stack event management platform with secure authentication, event creation, registration, and user management.",
+      "longDescription": "Developed a full-stack event management platform with secure authentication, event creation, registration, and user management features.",
+      "techStack": ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
+      "features": [
+        "Secure user authentication and role-based access control",
+        "Event creation, editing, deletion, and attendee registration",
+        "Interactive event calendars and user profile dashboards",
+        "Relational database storage using MySQL with optimized search queries"
+      ],
+      "githubUrl": "https://github.com/harshit-1318/eventelite",
+      "liveUrl": "",
+      "category": "FullStack",
+      "featured": true,
+      "order": 2,
+      "image": "/eventelite_preview.png",
+      "metrics": {
+        "latency": "90ms",
+        "security": "JWT & Bcrypt Encryption",
+        "concurrency": "100+ registrations/min"
+      },
+      "challenges": "Managing concurrent event registrations and preventing double-booking errors during high traffic periods.",
+      "solutions": "Implemented transaction isolation levels in MySQL queries and optimized database connection pooling.",
+      "architectureSteps": [
+        { "title": "Frontend Client", "description": "Captured registration inputs and managed user session state." },
+        { "title": "API Route Validation", "description": "Express middleware authenticated JWT tokens and sanitized inputs." },
+        { "title": "SQL Controller", "description": "MySQL database stored relational registration and event tables." }
+      ]
+    },
+    {
+      "title": "RentNest",
+      "slug": "rentnest",
+      "description": "An Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
+      "longDescription": "Built an Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
+      "techStack": ["Node.js", "Express.js", "MongoDB", "EJS"],
+      "features": [
+        "Comprehensive property listing creation with image uploads",
+        "Booking workflows with start/end date calculations",
+        "Review management system for property feedback",
+        "NoSQL storage with MongoDB schema validation"
+      ],
+      "githubUrl": "https://github.com/harshit-1318/rentnest",
+      "liveUrl": "",
+      "category": "FullStack",
+      "featured": true,
+      "order": 3,
+      "image": "/rentnest_preview.png",
+      "metrics": {
+        "latency": "110ms",
+        "dbLookup": "45ms index searches",
+        "coverage": "92% route tests"
+      },
+      "challenges": "Developing a dynamic UI using EJS templates while handling complex nested documents for reviews and booking status states.",
+      "solutions": "Designed modular mongoose schemas with subdocuments and pre-save hooks to automatically aggregate review ratings.",
+      "architectureSteps": [
+        { "title": "EJS Layout rendering", "description": "Renders server-side templates with dynamic data inputs." },
+        { "title": "Express routing", "description": "Directs request threads to booking and property controller actions." },
+        { "title": "Mongoose database", "description": "Stores collections for users, listings, bookings, and reviews." }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Full Stack Web Development (MERN Stack)",
+      "organization": "Apna College",
+      "issueDate": "2025",
+      "credentialId": "AC-MERN-2025-8912",
+      "credentialUrl": "https://drive.google.com/file/d/14Fy7OmfLbIvvAnRDyahMD_TDeMhkbwRd/view?usp=drive_link",
+      "order": 1
+    },
+    {
+      "title": "NIIT Foundation Software Program",
+      "organization": "Infosys Foundation",
+      "issueDate": "2025",
+      "credentialId": "INF-NIIT-2025-4421",
+      "credentialUrl": "https://drive.google.com/file/d/1r2IE6bTTd7i3JanmRpNYhZig7sISZiYp/view?usp=drive_link",
+      "order": 2
+    }
+  ],
+  "experiences": [
+    {
+      "company": "CSharma Consultancy",
+      "role": "Frontend Developer",
+      "type": "Full-time",
+      "location": "Jalandhar, Punjab (On-site)",
+      "startDate": "Oct 2025",
+      "endDate": "Jun 2026",
+      "current": false,
+      "bullets": [
+        "Engineered core modules of the production-ready YourMedicals Prescriber Portal, a live healthcare platform for a UK-based client.",
+        "Built reusable UI components and responsive layouts using React.js, TypeScript, Astro Framework, Vite, and Tailwind CSS, ensuring cross-device consistency.",
+        "Developed a full-featured Order Management Dashboard with filtering, sorting, pagination, and search using TanStack Table; integrated RESTful APIs via Axios and optimized data fetching/caching with TanStack Query.",
+        "Collaborated with backend developers, QA engineers, and designers in an Agile environment using Git, participating in sprint planning and code reviews to ensure timely, quality releases."
+      ],
+      "technologies": ["React.js", "TypeScript", "Astro", "Vite", "Tailwind CSS", "TanStack Table", "TanStack Query", "Axios", "Git"],
+      "order": 1
+    }
+  ],
+  "skills": [
+    { "name": "HTML5", "category": "Programming Languages", "icon": "file-code", "proficiency": 95, "order": 1 },
+    { "name": "CSS3", "category": "Programming Languages", "icon": "palette", "proficiency": 90, "order": 2 },
+    { "name": "JavaScript (ES6+)", "category": "Programming Languages", "icon": "code-2", "proficiency": 90, "order": 3 },
+    { "name": "TypeScript", "category": "Programming Languages", "icon": "file-type", "proficiency": 85, "order": 4 },
+    { "name": "React.js", "category": "Frontend", "icon": "atom", "proficiency": 90, "order": 5 },
+    { "name": "Astro", "category": "Frontend", "icon": "layout", "proficiency": 80, "order": 6 },
+    { "name": "Vite", "category": "Frontend", "icon": "zap", "proficiency": 85, "order": 7 },
+    { "name": "Tailwind CSS", "category": "Frontend", "icon": "wind", "proficiency": 95, "order": 8 },
+    { "name": "Bootstrap", "category": "Frontend", "icon": "palette", "proficiency": 80, "order": 9 },
+    { "name": "React Hooks", "category": "Frontend", "icon": "hook", "proficiency": 90, "order": 10 },
+    { "name": "Context API", "category": "Frontend", "icon": "network", "proficiency": 85, "order": 11 },
+    { "name": "Zustand", "category": "Frontend", "icon": "box", "proficiency": 80, "order": 12 },
+    { "name": "REST APIs", "category": "API & State", "icon": "network", "proficiency": 85, "order": 13 },
+    { "name": "Axios", "category": "API & State", "icon": "send", "proficiency": 90, "order": 14 },
+    { "name": "TanStack Query", "category": "API & State", "icon": "search", "proficiency": 85, "order": 15 },
+    { "name": "TanStack Table", "category": "API & State", "icon": "table", "proficiency": 85, "order": 16 },
+    { "name": "Node.js", "category": "Backend", "icon": "server", "proficiency": 75, "order": 17 },
+    { "name": "Express.js", "category": "Backend", "icon": "route", "proficiency": 80, "order": 18 },
+    { "name": "NestJS", "category": "Backend", "icon": "cpu", "proficiency": 60, "order": 19 },
+    { "name": "MongoDB", "category": "Database", "icon": "database", "proficiency": 75, "order": 20 },
+    { "name": "MySQL", "category": "Database", "icon": "table", "proficiency": 70, "order": 21 },
+    { "name": "Git", "category": "Tools", "icon": "git-merge", "proficiency": 85, "order": 22 },
+    { "name": "GitHub", "category": "Tools", "icon": "github", "proficiency": 85, "order": 23 },
+    { "name": "Postman", "category": "Tools", "icon": "send", "proficiency": 80, "order": 24 },
+    { "name": "Vercel", "category": "Tools", "icon": "monitor", "proficiency": 85, "order": 25 },
+    { "name": "Shopify APIs", "category": "Tools", "icon": "shopping-bag", "proficiency": 70, "order": 26 }
+  ],
+  "blogs": [],
+  "education": [
+    {
+      "institution": "Lovely Professional University",
+      "degree": "Master of Computer Applications (MCA)",
+      "location": "Punjab, India (Correspondence)",
+      "period": "2025 – 2027",
+      "coursework": [
+        "Advanced Software Engineering",
+        "Web Application Architectures",
+        "Database Management Systems",
+        "Object-Oriented Programming"
+      ],
+      "order": 1
+    },
+    {
+      "institution": "DAV College",
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "location": "Jalandhar, Punjab, India",
+      "period": "2022 – 2025",
+      "coursework": [
+        "Computer Programming & Languages",
+        "Data Structures & Algorithms",
+        "Database Management",
+        "System Analysis & Design"
+      ],
+      "order": 2
+    }
+  ],
+  "resume": {
+    "summary": "Frontend Developer with 9+ months of hands-on experience building production web applications using React.js, TypeScript, Astro, Vite, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components and integrating RESTful APIs.",
+    "pdfUrl": "/resume/Resume_Harshit.pdf",
+    "highlights": {
+      "experience": "9+ months as Frontend Developer at CSharma Consultancy",
+      "skills": "React.js, TypeScript, Astro, Vite, Tailwind CSS, TanStack Table & Query",
+      "projects": "YourMedicals Prescriber Portal, EventElite, RentNest",
+      "education": "MCA (Lovely Professional University), BCA (DAV College)",
+      "certifications": "Full Stack Web Development (MERN), NIIT Foundation Program"
+    }
+  }
+}

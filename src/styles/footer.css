@@ -1,0 +1,9 @@
+/* ══════════════════════════════════════════════════════
+   FOOTER — Modular Entry Point
+   Imports footer sub-modules from ./footer/
+   ══════════════════════════════════════════════════════ */
+
+@import "./footer/chat-fab.css";
+@import "./footer/site-footer.css";
+@import "./footer/footer-cta.css";
+@import "./footer/footer-widgets.css";

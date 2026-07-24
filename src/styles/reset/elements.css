@@ -1,0 +1,65 @@
+/* ══════════════════════════════════════════════════════
+   RESET ELEMENTS — Base element styles & typography
+   ══════════════════════════════════════════════════════ */
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-background);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  isolation: isolate;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 50% -15%, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent 38%),
+    var(--color-background);
+}
+
+/* Force hardware accelerated crisp layer rasterization on mobile WebKit/Chrome */
+[class*="backdrop-blur"] {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur);
+  backdrop-filter: var(--tw-backdrop-blur);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

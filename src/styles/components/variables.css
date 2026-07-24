@@ -1,0 +1,47 @@
+/* ══════════════════════════════════════════════════════
+   SPATIAL VARIABLES — Root & Dark Mode Properties
+   ══════════════════════════════════════════════════════ */
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-primary: #4f46e5;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #475569;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #0284c7;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-ring: #4f46e5;
+  --surface-highlight: #ffffff;
+  --surface-shadow: rgba(15, 23, 42, 0.04);
+  --spatial-violet: #6366f1;
+  --spatial-cyan: #06b6d4;
+  --spatial-blue: #3b82f6;
+}
+
+.dark {
+  --color-background: #080911;
+  --color-foreground: #f5f6fc;
+  --color-card: rgba(17, 19, 34, 0.7);
+  --color-card-foreground: #f5f6fc;
+  --color-primary: #9a8cff;
+  --color-primary-foreground: #0b0915;
+  --color-secondary: #7fb4cb;
+  --color-secondary-foreground: #071014;
+  --color-accent: #55d6f2;
+  --color-accent-foreground: #041013;
+  --color-muted: #171927;
+  --color-muted-foreground: #9ca3b9;
+  --color-border: rgba(202, 207, 255, 0.13);
+  --color-ring: #9a8cff;
+  --surface-highlight: rgba(255, 255, 255, 0.08);
+  --surface-shadow: rgba(0, 0, 0, 0.5);
+  --spatial-violet: #9a8cff;
+  --spatial-cyan: #55d6f2;
+  --spatial-blue: #6794ff;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Harshit",
+  "shortName": "Harshit",
+  "tagline": "Frontend Developer",
+  "role": "Frontend Developer",
+  "specialization": "React · TypeScript · Astro · Next.js · Tailwind CSS",
+  "location": "Jalandhar, Punjab, India",
+  "yearsOfExperience": "9+ Months",
+  "bio": "Frontend Developer passionate about building high-performance web applications using React.js, Next.js, TypeScript, and Tailwind CSS. Experienced in engineering data-dense dashboards, scalable component systems, and RESTful API integrations.",
+  "avatarSvg": "",
+  "social": {
+    "github": "https://github.com/harshit-1318",
+    "linkedin": "https://www.linkedin.com/in/harshit-kumar",
+    "instagram": "",
+    "email": "kumarharshit370@gmail.com",
+    "phone": "+91-7814283095",
+    "website": "https://harshit-kumar.dev",
+    "resume": "/resume/Resume_Harshit.pdf",
+    "booking": "https://calendly.com/kumarharshit370"
+  }
+}

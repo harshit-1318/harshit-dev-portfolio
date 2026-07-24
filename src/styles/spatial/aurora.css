@@ -1,0 +1,65 @@
+/* ══════════════════════════════════════════════════════
+   AURORA & LIGHTING — Ambient Aurora Glow, Dots & Pointer
+   ══════════════════════════════════════════════════════ */
+
+.spatial-background__aurora {
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at 20% 25%, color-mix(in srgb, var(--spatial-violet) 24%, transparent), transparent 42%),
+    radial-gradient(circle at 80% 45%, color-mix(in srgb, var(--spatial-cyan) 20%, transparent), transparent 45%),
+    radial-gradient(circle at 50% 75%, color-mix(in srgb, var(--spatial-violet) 18%, transparent), transparent 48%);
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: aurora-glow-shift 18s ease-in-out infinite alternate;
+}
+
+.dark .spatial-background__aurora {
+  opacity: 0.85;
+}
+
+@keyframes aurora-glow-shift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.12) translate3d(-2%, 3%, 0);
+  }
+  100% {
+    transform: scale(0.96) translate3d(2%, -2%, 0);
+  }
+}
+
+.spatial-background__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-foreground) 9%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 95%);
+  pointer-events: none;
+}
+
+.spatial-background__pointer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    520px circle at var(--pointer-x) var(--pointer-y),
+    color-mix(in srgb, var(--spatial-violet) 14%, transparent),
+    transparent 70%
+  );
+}
+
+.spatial-background__grid {
+  position: absolute;
+  width: 160%;
+  height: 70%;
+  left: -30%;
+  bottom: -34%;
+  transform: rotateX(67deg);
+  transform-origin: center top;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-primary) 13%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, black 22%, transparent 85%);
+}

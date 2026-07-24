@@ -1,0 +1,45 @@
+/* ══════════════════════════════════════════════════════
+   BADGES & PILLS — Anime Badges & Mono Pills
+   ══════════════════════════════════════════════════════ */
+
+.anime-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.725rem;
+  font-weight: 500;
+  padding: 0.2rem 0.625rem;
+  border-radius: 9999px;
+  border-color: color-mix(in srgb, var(--color-primary) 24%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.anime-badge-secondary {
+  background: color-mix(in srgb, var(--color-secondary) 8%, transparent);
+  color: var(--color-secondary);
+  border-color: color-mix(in srgb, var(--color-secondary) 15%, transparent);
+}
+
+.anime-badge-accent {
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  color: var(--color-accent);
+  border-color: color-mix(in srgb, var(--color-accent) 15%, transparent);
+}
+
+/* ── Monospace Pills ── */
+
+.mono-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: var(--color-muted);
+  border-color: color-mix(in srgb, var(--color-primary) 24%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  border: 1px solid color-mix(in srgb, var(--color-border));
+  letter-spacing: 0.02em;
+}
