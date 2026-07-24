@@ -125,7 +125,7 @@ export default function AdminLoginPage() {
           <motion.ul {...fadeUp(0.5)} className="space-y-3">
             {FEATURES.map(({ icon: Icon, label }, idx) => (
               <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
-                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <span className="shrink-0 w-7 h-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
                   <Icon className="w-3.5 h-3.5 text-primary" />
                 </span>
                 {label}

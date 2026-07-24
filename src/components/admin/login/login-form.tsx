@@ -63,7 +63,7 @@ export function LoginForm() {
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/60 to-transparent" />
 
       {/* Inner card highlight */}
-      <div className="absolute inset-0 bg-linear-to-b from-white/[0.04] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/4 to-transparent pointer-events-none" />
 
       {/* Success overlay */}
       <AnimatePresence>
