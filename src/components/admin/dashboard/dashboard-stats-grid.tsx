@@ -66,11 +66,11 @@ export function DashboardStatsGrid({ stats, loading }: DashboardStatsGridProps) 
                 {item.description}
               </p>
 
-              {/* Subtle trend indicator */}
-              {!loading && typeof count === 'number' && count > 0 && (
-                <div className={`mt-3 inline-flex items-center gap-1 text-[10px] font-semibold ${item.color} opacity-70`}>
+              {/* Subtle trend indicator — always rendered to keep card heights equal */}
+              {!loading && typeof count === 'number' && (
+                <div className={`mt-3 inline-flex items-center gap-1 text-[10px] font-semibold ${count > 0 ? item.color : 'text-muted-foreground'} opacity-70`}>
                   <TrendingUp className="w-3 h-3" />
-                  Active
+                  {count > 0 ? 'Active' : 'Empty'}
                 </div>
               )}
             </Link>
