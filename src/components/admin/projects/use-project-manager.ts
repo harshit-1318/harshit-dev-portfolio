@@ -7,17 +7,18 @@ import { useProjectState, emptyProject } from './use-project-state';
 
 export function useProjectManager() {
   const state = useProjectState();
+  const { setProjects, setLoading } = state;
 
   const fetchProjects = useCallback(async () => {
     try {
       const res = await fetch('/api/projects');
-      if (res.ok) state.setProjects(await res.json());
+      if (res.ok) setProjects(await res.json());
     } catch {
       toast.error('Failed to fetch projects');
     } finally {
-      state.setLoading(false);
+      setLoading(false);
     }
-  }, [state]);
+  }, [setProjects, setLoading]); // ← stable setState functions, no infinite loop
 
   useEffect(() => {
     fetchProjects();

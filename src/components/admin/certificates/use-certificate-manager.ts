@@ -7,17 +7,18 @@ import { useCertificateState, emptyCertificate } from './use-certificate-state';
 
 export function useCertificateManager() {
   const state = useCertificateState();
+  const { setCertificates, setLoading } = state;
 
   const fetchCertificates = useCallback(async () => {
     try {
       const res = await fetch('/api/certificates');
-      if (res.ok) state.setCertificates(await res.json());
+      if (res.ok) setCertificates(await res.json());
     } catch {
       toast.error('Failed to fetch certificates');
     } finally {
-      state.setLoading(false);
+      setLoading(false);
     }
-  }, [state]);
+  }, [setCertificates, setLoading]); // ← stable setState functions, no infinite loop
 
   useEffect(() => {
     fetchCertificates();

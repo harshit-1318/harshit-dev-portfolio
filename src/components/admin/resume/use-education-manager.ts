@@ -7,17 +7,18 @@ import { useEducationState, emptyEducation } from "./use-education-state";
 
 export function useEducationManager() {
   const state = useEducationState();
+  const { setEducations, setEduLoading } = state;
 
   const fetchEducations = useCallback(async () => {
     try {
       const res = await fetch('/api/education');
-      if (res.ok) state.setEducations(await res.json());
+      if (res.ok) setEducations(await res.json());
     } catch (error) {
       console.error('Failed to fetch educations:', error);
     } finally {
-      state.setEduLoading(false);
+      setEduLoading(false);
     }
-  }, [state]);
+  }, [setEducations, setEduLoading]);
 
   useEffect(() => {
     fetchEducations();

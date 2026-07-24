@@ -8,17 +8,18 @@ import { useSkillsState, emptySkill } from './use-skills-state';
 
 export function useSkillsManager() {
   const state = useSkillsState();
+  const { setSkills, setLoading } = state;
 
   const fetchSkills = useCallback(async () => {
     try {
       const res = await fetch('/api/skills');
-      if (res.ok) state.setSkills(await res.json());
+      if (res.ok) setSkills(await res.json());
     } catch {
       toast.error('Failed to fetch skills');
     } finally {
-      state.setLoading(false);
+      setLoading(false);
     }
-  }, [state]);
+  }, [setSkills, setLoading]);
 
   useEffect(() => {
     fetchSkills();

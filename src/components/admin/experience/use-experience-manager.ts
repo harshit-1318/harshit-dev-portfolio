@@ -7,17 +7,18 @@ import { useExperienceState, emptyExperience } from './use-experience-state';
 
 export function useExperienceManager() {
   const state = useExperienceState();
+  const { setExperiences, setLoading } = state;
 
   const fetchExperiences = useCallback(async () => {
     try {
       const res = await fetch('/api/experience');
-      if (res.ok) state.setExperiences(await res.json());
+      if (res.ok) setExperiences(await res.json());
     } catch {
       toast.error('Failed to fetch experiences');
     } finally {
-      state.setLoading(false);
+      setLoading(false);
     }
-  }, [state]);
+  }, [setExperiences, setLoading]);
 
   useEffect(() => {
     fetchExperiences();
