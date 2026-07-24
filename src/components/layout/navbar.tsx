@@ -31,23 +31,23 @@ export function Navbar() {
         transition={{ duration: 0.28, ease: "easeOut" }}
         className="fixed inset-x-0 top-0 z-50 pointer-events-none w-full"
       >
-        <div className="absolute inset-x-0 top-0 h-22 bg-background -z-10" />
-        <div className="absolute inset-x-0 top-22 h-8 bg-linear-to-b from-background to-transparent -z-10" />
+        <div className="absolute inset-x-0 top-0 h-16 sm:h-22 bg-background/80 -z-10 backdrop-blur-md" />
+        <div className="absolute inset-x-0 top-16 sm:top-22 h-6 sm:h-8 bg-linear-to-b from-background/80 to-transparent -z-10 pointer-events-none" />
 
-        <div className="px-3 pt-6 sm:px-6 w-full">
+        <div className="px-3 pt-2.5 sm:pt-5 sm:px-6 w-full">
           <nav
             aria-label="Primary navigation"
             className={cn(
-              "mx-auto flex h-18 max-w-330 items-center justify-between px-6 sm:px-8 pointer-events-auto rounded-full border border-black/5 dark:border-white/10 bg-white/75 dark:bg-[#0f0f14]/75 shadow-[0_12px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-[18px] transition-all duration-300",
+              "mx-auto flex h-14 sm:h-18 max-w-330 items-center justify-between px-4 sm:px-8 pointer-events-auto rounded-full border border-black/5 dark:border-white/10 bg-white/75 dark:bg-[#0f0f14]/75 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-[18px] transition-all duration-300",
               isScrolled &&
-                "border-black/10 dark:border-white/15 bg-white/90 dark:bg-[#0f0f14]/95 shadow-[0_16px_50px_rgba(0,0,0,0.08)] dark:shadow-[0_16px_50px_rgba(0,0,0,0.5)]"
+                "border-black/10 dark:border-white/15 bg-white/90 dark:bg-[#0f0f14]/95 shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)]"
             )}
           >
             <NavbarLogo onLinkClick={handleLinkClick} />
 
             <DesktopLinks getActiveState={getActiveState} onLinkClick={handleLinkClick} />
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <ThemeToggle />
               <Link
                 href="/#contact"
@@ -60,7 +60,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => setIsMobileOpen((open) => !open)}
-                className="grid size-10 place-items-center rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 text-slate-900 dark:text-white transition-all duration-300 lg:hidden"
+                className="grid size-9 sm:size-10 place-items-center rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 text-slate-900 dark:text-white transition-all duration-300 lg:hidden"
                 aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={isMobileOpen}
               >

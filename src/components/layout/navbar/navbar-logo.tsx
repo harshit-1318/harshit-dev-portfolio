@@ -35,7 +35,7 @@ export function NavbarLogo({ onLinkClick }: NavbarLogoProps) {
           <rect x="25.5" y="6" width="5.5" height="28" rx="2.75" className="fill-[url(#logo-accent-light)] dark:fill-[url(#logo-silver-dark)]" />
         </svg>
       </div>
-      <span className="hidden sm:inline font-heading font-black text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-200">
+      <span className="font-heading font-bold text-sm tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-200">
         Harshit
       </span>
     </Link>
