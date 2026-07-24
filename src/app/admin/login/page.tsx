@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
 
       {/* Ambient background glows */}
       <div className="fixed inset-0 grid-pattern opacity-40 pointer-events-none" />
-      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-linear-to-tr from-primary/20 via-indigo-500/15 to-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-linear-to-tr from-primary/20 via-indigo-500/15 to-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="fixed -bottom-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="fixed -top-20 -right-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 

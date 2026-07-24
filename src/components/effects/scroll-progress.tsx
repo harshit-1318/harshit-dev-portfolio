@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 export function ScrollProgress() {
   const pathname = usePathname();
   const { scrollYProgress } = useScroll();
-
-  if (pathname?.startsWith("/admin")) return null;
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 200,
     damping: 30,
     restDelta: 0.001,
   });
+
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <motion.div

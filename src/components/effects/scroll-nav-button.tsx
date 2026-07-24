@@ -10,8 +10,6 @@ export function ScrollNavButton() {
   const [isBottom, setIsBottom] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  if (pathname?.startsWith("/admin")) return null;
-
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
@@ -31,6 +29,8 @@ export function ScrollNavButton() {
     
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname?.startsWith("/admin")) return null;
 
   const handleClick = () => {
     if (isBottom) {
