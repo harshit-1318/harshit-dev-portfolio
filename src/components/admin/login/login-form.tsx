@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { Lock } from "lucide-react";
+import { Lock, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { LoginFormFields } from "./login-form-fields";
 
 export function LoginForm() {
@@ -28,7 +29,7 @@ export function LoginForm() {
 
       if (result?.error) {
         console.error("[Login Error]:", result.error);
-        setError("Invalid email or password");
+        setError("Invalid email address or password.");
       } else {
         router.push("/admin");
       }
@@ -41,14 +42,29 @@ export function LoginForm() {
   };
 
   return (
-    <div className="anime-card rounded-2xl p-8 shadow-xl shadow-primary/5">
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      className="relative rounded-3xl bg-card/70 backdrop-blur-2xl border border-border/80 p-6 sm:p-8 shadow-2xl shadow-primary/10"
+    >
       <form onSubmit={handleSubmit} className="space-y-6">
-        {error && (
-          <div className="flex items-center gap-2 px-4 py-3 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive text-sm">
-            <Lock className="w-4 h-4 shrink-0" />
-            {error}
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, y: -10 }}
+              animate={{ opacity: 1, height: "auto", y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden"
+            >
+              <div className="flex items-center gap-3 px-4 py-3 bg-rose-500/10 border border-rose-500/25 rounded-2xl text-rose-600 dark:text-rose-400 text-xs font-semibold shadow-xs">
+                <AlertCircle className="w-4 h-4 shrink-0 text-rose-500 animate-pulse" />
+                <span>{error}</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <LoginFormFields
           email={email}
@@ -62,21 +78,25 @@ export function LoginForm() {
         <button
           type="submit"
           disabled={loading}
-          className="anime-btn w-full flex items-center justify-center gap-2"
+          className="relative w-full h-12 rounded-xl bg-linear-to-r from-indigo-600 via-primary to-cyan-500 hover:from-indigo-500 hover:via-primary hover:to-cyan-400 text-primary-foreground font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.01] active:scale-[0.98] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 group overflow-hidden disabled:opacity-70 disabled:pointer-events-none"
         >
+          {/* Subtle button glare effect */}
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
           {loading ? (
             <>
-              <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-              Signing in...
+              <Loader2 className="w-4 h-4 animate-spin" />
+              <span>Authenticating...</span>
             </>
           ) : (
             <>
-              <Lock className="w-4 h-4" />
-              Sign In
+              <Lock className="w-4 h-4 text-primary-foreground/80 group-hover:scale-110 transition-transform" />
+              <span>Sign In to Dashboard</span>
+              <ArrowRight className="w-4 h-4 text-primary-foreground/70 group-hover:translate-x-1 transition-transform" />
             </>
           )}
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 }
