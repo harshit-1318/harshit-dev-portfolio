@@ -24,24 +24,39 @@ export function mapProfileData(profile: any, staticProfile: IPortfolioData["prof
   };
 }
 
+function safeFormatDateString(val: any): string {
+  if (!val) return '';
+  if (typeof val === 'string') {
+    const trimmed = val.trim();
+    if (!trimmed) return '';
+    // If it's already a formatted string like "Oct 2025" or "2025" or fails native parsing
+    if (/^[A-Za-z]{3,}\s+\d{4}$/.test(trimmed) || isNaN(Date.parse(trimmed))) {
+      return trimmed;
+    }
+  }
+  const d = new Date(val);
+  if (isNaN(d.getTime())) return String(val);
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+}
+
 export function mapExperienceData(experiences: any) {
   const array = Array.isArray(experiences) ? experiences : (experiences?.experiences || experiences);
   if (!Array.isArray(array) || array.length === 0) return null;
 
   const sorted = [...array].sort((a: any, b: any) => (a.order ?? 0) - (b.order ?? 0));
   return sorted.map((exp: any) => {
-    const startStr = exp.startDate ? new Date(exp.startDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' }) : '';
+    const startStr = safeFormatDateString(exp.startDate);
     const endStr = exp.current 
       ? 'Present' 
-      : exp.endDate 
-        ? new Date(exp.endDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short' }) 
-        : '';
+      : safeFormatDateString(exp.endDate);
+
+    const periodStr = exp.period || (startStr && endStr ? `${startStr} – ${endStr}` : startStr || endStr || '');
 
     return {
       company: exp.company,
       role: exp.role,
-      type: exp.type || "Internship",
-      period: exp.period || `${startStr} – ${endStr}`,
+      type: exp.type || "Full-time",
+      period: periodStr,
       location: exp.location,
       summary: exp.bullets ? exp.bullets[0] || "" : "",
       highlights: exp.bullets || [],

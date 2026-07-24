@@ -6,7 +6,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string | Date): string {
-  return new Date(date).toLocaleDateString("en-US", {
+  if (!date) return "";
+  if (typeof date === "string") {
+    const trimmed = date.trim();
+    if (!trimmed) return "";
+    if (/^[A-Za-z]{3,}\s+\d{4}$/.test(trimmed) || isNaN(Date.parse(trimmed))) {
+      return trimmed;
+    }
+  }
+  const d = typeof date === "string" ? new Date(date) : date;
+  if (isNaN(d.getTime())) return String(date);
+  return d.toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",
   });
