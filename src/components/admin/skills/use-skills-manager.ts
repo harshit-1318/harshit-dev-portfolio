@@ -77,8 +77,18 @@ export function useSkillsManager() {
     }
   };
 
-  const groupedSkills = SKILL_CATEGORIES.reduce((acc, cat) => {
-    acc[cat] = state.skills.filter((s) => s.category === cat);
+  const allCategories = Array.from(
+    new Set([
+      ...SKILL_CATEGORIES,
+      ...state.skills.map((s) => s.category).filter(Boolean),
+    ])
+  );
+
+  const groupedSkills = allCategories.reduce((acc, cat) => {
+    const items = state.skills.filter((s) => s.category === cat);
+    if (items.length > 0) {
+      acc[cat] = items;
+    }
     return acc;
   }, {} as Record<string, ISkill[]>);
 

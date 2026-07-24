@@ -8,10 +8,13 @@ import { useSkillsManager } from './use-skills-manager';
 export const SKILL_CATEGORIES = [
   'Programming Languages',
   'Frontend',
+  'API & State',
   'Backend',
+  'Database',
   'Database & Cloud',
-  'AI/ML & Frameworks',
+  'Tools',
   'Tools & Platforms',
+  'AI/ML & Frameworks',
 ] as const;
 
 export function SkillsManager() {

@@ -67,7 +67,7 @@ export function SkillsList({
 
   return (
     <div className="space-y-8">
-      {categories.map((category) => {
+      {Object.keys(groupedSkills).map((category) => {
         const catSkills = groupedSkills[category];
         if (!catSkills || catSkills.length === 0) return null;
 
