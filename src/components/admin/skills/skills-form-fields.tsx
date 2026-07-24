@@ -21,7 +21,7 @@ export function SkillsFormFields({
       {/* Skill Name & Category */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 text-primary" />
             Skill Name <span className="text-destructive">*</span>
           </label>
@@ -36,7 +36,7 @@ export function SkillsFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Layers className="w-3.5 h-3.5 text-primary" />
             Category
           </label>
@@ -57,7 +57,7 @@ export function SkillsFormFields({
       {/* Proficiency Slider + Input */}
       <div className="p-4 rounded-xl border border-border/60 bg-muted/30 space-y-3">
         <div className="flex items-center justify-between">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <BarChart2 className="w-3.5 h-3.5 text-primary" />
             Proficiency Level
           </label>
@@ -90,7 +90,7 @@ export function SkillsFormFields({
       {/* Icon Name & Order */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
             Icon Identifier
           </label>
@@ -105,7 +105,7 @@ export function SkillsFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Hash className="w-3.5 h-3.5 text-primary" />
             Display Order
           </label>

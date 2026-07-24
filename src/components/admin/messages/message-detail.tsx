@@ -36,7 +36,7 @@ export function MessageDetail({
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.2 }}
-      className="relative rounded-2xl p-6 sticky top-24 border border-border/80 bg-card/80 backdrop-blur-md shadow-xl space-y-5 overflow-hidden"
+      className="rounded-2xl p-6 sticky top-24 border border-border/80 bg-card/80 backdrop-blur-md shadow-xl space-y-5 overflow-hidden"
     >
       {/* Top accent bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-blue-500 to-cyan-500" />

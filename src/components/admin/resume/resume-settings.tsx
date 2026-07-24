@@ -51,7 +51,7 @@ export function ResumeSettings({
 
         <div className="space-y-4">
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
               <LinkIcon className="w-3.5 h-3.5 text-primary" />
               Resume PDF URL / Path <span className="text-destructive">*</span>
             </label>
@@ -66,7 +66,7 @@ export function ResumeSettings({
           </div>
 
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+            <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
               <AlignLeft className="w-3.5 h-3.5 text-primary" />
               Professional Summary <span className="text-destructive">*</span>
             </label>

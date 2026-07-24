@@ -28,7 +28,7 @@ export function ExperienceFormFields({
       {/* Company & Role */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Building2 className="w-3.5 h-3.5 text-primary" />
             Company Name <span className="text-destructive">*</span>
           </label>
@@ -43,7 +43,7 @@ export function ExperienceFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <UserCheck className="w-3.5 h-3.5 text-primary" />
             Role / Title <span className="text-destructive">*</span>
           </label>
@@ -61,7 +61,7 @@ export function ExperienceFormFields({
       {/* Type, Location, Order */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Briefcase className="w-3.5 h-3.5 text-primary" />
             Job Type
           </label>
@@ -77,7 +77,7 @@ export function ExperienceFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-primary" />
             Location <span className="text-destructive">*</span>
           </label>
@@ -92,7 +92,7 @@ export function ExperienceFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Hash className="w-3.5 h-3.5 text-primary" />
             Display Order
           </label>

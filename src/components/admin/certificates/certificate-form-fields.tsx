@@ -17,7 +17,7 @@ export function CertificateFormFields({
       {/* Title & Organization */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Award className="w-3.5 h-3.5 text-primary" />
             Title <span className="text-destructive">*</span>
           </label>
@@ -32,7 +32,7 @@ export function CertificateFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Building2 className="w-3.5 h-3.5 text-primary" />
             Organization <span className="text-destructive">*</span>
           </label>
@@ -50,7 +50,7 @@ export function CertificateFormFields({
       {/* Date & Order */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5 text-primary" />
             Issue Date <span className="text-destructive">*</span>
           </label>
@@ -64,7 +64,7 @@ export function CertificateFormFields({
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
             <Hash className="w-3.5 h-3.5 text-primary" />
             Display Order
           </label>
@@ -82,7 +82,7 @@ export function CertificateFormFields({
 
       {/* Credential URL */}
       <div className="space-y-1.5">
-        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+        <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
           <LinkIcon className="w-3.5 h-3.5 text-primary" />
           Credential URL (Optional)
         </label>
@@ -97,7 +97,7 @@ export function CertificateFormFields({
 
       {/* Description */}
       <div className="space-y-1.5">
-        <label className="block text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+        <label className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
           <FileText className="w-3.5 h-3.5 text-primary" />
           Description (Optional)
         </label>
