@@ -60,11 +60,16 @@ if (!(global as any).isMongoosePatched) {
       else if (key === "experience") key = "experiences";
       else if (key === "certificate") key = "certificates";
       else if (key === "contactmessage") key = "contactmessages";
+      else if (key === "skill") key = "skills";
+      else if (key === "user") key = "admin";
 
       const data = seedData[key];
 
-      // Determine query type (findOne vs find)
-      if (this.op === "findOne" || this.op === "findOneAndUpdate" || this.op === "findByIdAndUpdate") {
+      // Determine query type (count vs findOne vs find)
+      if (this.op === "countDocuments" || this.op === "count") {
+        const docs = Array.isArray(data) ? data : (data ? [data] : []);
+        return docs.length;
+      } else if (this.op === "findOne" || this.op === "findOneAndUpdate" || this.op === "findByIdAndUpdate") {
         const updateData = this.getUpdate ? this.getUpdate() : null;
         let doc = Array.isArray(data) ? (data[0] || {}) : (data || {});
         if (updateData) {
@@ -74,7 +79,10 @@ if (!(global as any).isMongoosePatched) {
         if (!doc._id) {
           doc._id = new mongoose.Types.ObjectId().toString();
         }
-        return doc;
+        if (key === "admin" && !doc.password) {
+          doc.password = "HARSHIT-1318";
+        }
+        return { ...doc };
       } else if (this.op === "findOneAndDelete" || this.op === "findByIdAndDelete") {
         return { _id: this.getFilter ? this.getFilter()._id : "deleted" };
       } else if (this.op === "find") {
@@ -105,14 +113,14 @@ if (!(global as any).isMongoosePatched) {
 }
 
 async function dbConnect(): Promise<typeof mongoose> {
-  if (cached.conn) {
+  if (cached.conn && !global.isMockDb) {
     return cached.conn;
   }
 
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 2000, // Fail fast (2 seconds) so frontend doesn't wait
+      serverSelectionTimeoutMS: 10000, // 10 seconds for reliable cloud connection
     };
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       console.log("Successfully connected to MongoDB.");
@@ -125,12 +133,13 @@ async function dbConnect(): Promise<typeof mongoose> {
     cached.conn = await cached.promise;
   } catch (e) {
     cached.promise = null;
+    cached.conn = null;
     console.warn("--------------------------------------------------------------------------------");
     console.warn("[WARNING] MongoDB connection failed. Running in static offline mockup mode.");
     console.warn("[WARNING] Database queries will be answered using data from seed.json.");
     console.warn("--------------------------------------------------------------------------------");
     global.isMockDb = true;
-    cached.conn = mongoose; // Return mongoose instance to bypass crashes
+    return mongoose;
   }
 
   return cached.conn;

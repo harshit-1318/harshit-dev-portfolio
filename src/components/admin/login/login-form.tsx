@@ -27,11 +27,13 @@ export function LoginForm() {
       });
 
       if (result?.error) {
+        console.error("[Login Error]:", result.error);
         setError("Invalid email or password");
       } else {
         router.push("/admin");
       }
-    } catch {
+    } catch (err) {
+      console.error("[Login Exception]:", err);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);

@@ -14,10 +14,11 @@ export function DashboardStatsGrid({ stats, loading }: DashboardStatsGridProps) 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
       {statsConfig.map((item) => {
         const Icon = item.icon;
+        const val = stats ? stats[item.key] : 0;
         const count = loading
           ? '—'
-          : stats
-          ? stats[item.key]
+          : typeof val === 'number' || typeof val === 'string'
+          ? val
           : 0;
         return (
           <Link

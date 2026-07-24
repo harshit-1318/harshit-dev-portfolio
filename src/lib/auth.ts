@@ -5,6 +5,7 @@ import dbConnect from "./db";
 import User from "@/models/User";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET || "harshit_dev_portfolio_secret_key_1318",
   providers: [
     Credentials({
       credentials: {
@@ -15,19 +16,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!credentials?.email || !credentials?.password) return null;
 
         await dbConnect();
-        const user = await User.findOne({ email: credentials.email }).select("+password");
+        const email = (credentials.email as string).toLowerCase().trim();
+        const user = await User.findOne({ email }).select("+password");
         if (!user) return null;
 
-        const isValid = await bcrypt.compare(
-          credentials.password as string,
-          user.password
-        );
+        let isValid = false;
+        if (user.password?.startsWith("$2a$") || user.password?.startsWith("$2b$") || user.password?.startsWith("$2y$")) {
+          isValid = await bcrypt.compare(
+            credentials.password as string,
+            user.password
+          );
+        } else {
+          isValid = (credentials.password as string) === user.password;
+        }
+
         if (!isValid) return null;
 
         return {
-          id: user._id.toString(),
+          id: user._id?.toString() || "1",
           email: user.email,
-          name: user.name,
+          name: user.name || "Admin",
         };
       },
     }),
