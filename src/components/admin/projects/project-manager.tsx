@@ -25,9 +25,11 @@ export function ProjectManager() {
     handleDelete,
   } = useProjectManager();
 
+  const handleAdd = () => { resetForm(); setShowForm(true); };
+
   return (
     <div className="space-y-6">
-      <ProjectHeader onAdd={() => { resetForm(); setShowForm(true); }} />
+      <ProjectHeader onAdd={handleAdd} projects={projects} />
 
       {showForm && (
         <ProjectForm
@@ -49,6 +51,7 @@ export function ProjectManager() {
         projects={projects}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
+        onAdd={handleAdd}
       />
     </div>
   );

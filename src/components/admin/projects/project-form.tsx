@@ -1,6 +1,7 @@
 "use client";
 
-import { X } from "lucide-react";
+import { X, FolderKanban, Pencil, Sparkles, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { IProject } from "@/types";
 import { ProjectFormFields } from "./project-form-fields";
 
@@ -31,47 +32,87 @@ export function ProjectForm({
   featuresInput,
   setFeaturesInput,
 }: ProjectFormProps) {
+  const isEditing = !!editingId;
+
   return (
-    <div className="anime-card rounded-2xl p-6">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-semibold font-heading">
-          {editingId ? 'Edit Project' : 'New Project'}
-        </h2>
-        <button
-          onClick={resetForm}
-          className="text-muted-foreground hover:text-foreground transition cursor-pointer"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      </div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="relative rounded-2xl overflow-hidden border border-border/70 bg-card/80 backdrop-blur-sm shadow-lg shadow-black/5"
+      >
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-primary/60 to-transparent" />
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <ProjectFormFields
-          formData={formData}
-          setFormData={setFormData}
-          techStackInput={techStackInput}
-          setTechStackInput={setTechStackInput}
-          featuresInput={featuresInput}
-          setFeaturesInput={setFeaturesInput}
-        />
-
-        <div className="flex items-center gap-3 pt-2">
-          <button
-            type="submit"
-            disabled={saving}
-            className="anime-btn disabled:opacity-50"
-          >
-            {saving ? 'Saving...' : editingId ? 'Update Project' : 'Create Project'}
-          </button>
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border/50 bg-muted/20">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+              {isEditing
+                ? <Pencil className="w-4 h-4 text-primary" />
+                : <Sparkles className="w-4 h-4 text-primary" />
+              }
+            </div>
+            <div>
+              <h2 className="text-sm font-bold font-heading text-foreground">
+                {isEditing ? 'Edit Project' : 'New Project'}
+              </h2>
+              <p className="text-xs text-muted-foreground">
+                {isEditing ? 'Update project details' : 'Fill in the details below'}
+              </p>
+            </div>
+          </div>
           <button
             type="button"
             onClick={resetForm}
-            className="anime-btn-outline"
+            className="w-8 h-8 flex items-center justify-center rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/60 transition cursor-pointer"
           >
-            Cancel
+            <X className="w-4 h-4" />
           </button>
         </div>
-      </form>
-    </div>
+
+        {/* Form body */}
+        <form onSubmit={handleSubmit} className="p-6 space-y-6">
+          <ProjectFormFields
+            formData={formData}
+            setFormData={setFormData}
+            techStackInput={techStackInput}
+            setTechStackInput={setTechStackInput}
+            featuresInput={featuresInput}
+            setFeaturesInput={setFeaturesInput}
+          />
+
+          {/* Footer actions */}
+          <div className="flex items-center gap-3 pt-2 border-t border-border/40">
+            <button
+              type="submit"
+              disabled={saving}
+              className="anime-btn flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {saving ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Saving…
+                </>
+              ) : (
+                <>
+                  {isEditing ? <Pencil className="w-4 h-4" /> : <FolderKanban className="w-4 h-4" />}
+                  {isEditing ? 'Update Project' : 'Create Project'}
+                </>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={resetForm}
+              className="anime-btn-outline"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </motion.div>
+    </AnimatePresence>
   );
 }
