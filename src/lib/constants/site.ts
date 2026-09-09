@@ -9,7 +9,7 @@ export const siteConfig = {
   location: "Jalandhar, Punjab, India",
   links: {
     github: "https://github.com/harshit-1318",
-    linkedin: "https://www.linkedin.com/in/harshit-kumar",
+    linkedin: "https://www.linkedin.com/in/harshitkumar-dev1318",
     leetcode: "",
     resume: "/resume/Resume_Harshit.pdf",
     booking: "https://calendly.com/kumarharshit370",

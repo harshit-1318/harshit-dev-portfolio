@@ -12,7 +12,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-[🌐 Live Demo](https://harshit-dev-portfolio.vercel.app) • [📄 View Resume](https://harshit-dev-portfolio.vercel.app/resume/Resume_Harshit.pdf) • [💼 LinkedIn](https://www.linkedin.com/in/harshit-kumar) • [🐙 GitHub](https://github.com/harshit-1318) • [✉️ Contact](mailto:kumarharshit370@gmail.com)
+[🌐 Live Demo](https://harshit-dev-portfolio-ten.vercel.app) • [📄 View Resume](https://harshit-dev-portfolio-ten.vercel.app/resume/Resume_Harshit.pdf) • [💼 LinkedIn](https://www.linkedin.com/in/harshitkumar-dev1318/) • [🐙 GitHub](https://github.com/harshit-1318) • [✉️ Contact](mailto:kumarharshit370@gmail.com)
 
 </div>
 
@@ -20,7 +20,7 @@
 
 ## 🌟 Overview
 
-This repository powers **[harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app)** — a modern full-stack developer portfolio engineering showcase. It combines a dynamic 3D WebGL spatial universe, interactive IDE code playground, live project showcases with architecture drawers, dark/light theme switching, and an authenticated admin control dashboard backed by MongoDB Atlas.
+This repository powers **[harshit-dev-portfolio-ten.vercel.app](https://harshit-dev-portfolio-ten.vercel.app)** — a modern full-stack developer portfolio engineering showcase. It combines a dynamic 3D WebGL spatial universe, interactive IDE code playground, live project showcases with architecture drawers, dark/light theme switching, and an authenticated admin control dashboard backed by MongoDB Atlas.
 
 ### 🎯 Key Engineering Highlights
 
@@ -236,8 +236,8 @@ This portfolio is optimized for deployment on **[Vercel](https://vercel.com/)**:
 
 ## 🤝 Connect & Socials
 
-- **Portfolio:** [harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app)
-- **LinkedIn:** [linkedin.com/in/harshit-kumar](https://www.linkedin.com/in/harshit-kumar)
+- **Portfolio:** [harshit-dev-portfolio-ten.vercel.app](https://harshit-dev-portfolio-ten.vercel.app)
+- **LinkedIn:** [linkedin.com/in/harshitkumar-dev1318](https://www.linkedin.com/in/harshitkumar-dev1318/)
 - **GitHub:** [@harshit-1318](https://github.com/harshit-1318)
 - **Email:** [kumarharshit370@gmail.com](mailto:kumarharshit370@gmail.com)
 - **Phone:** +91-7814283095

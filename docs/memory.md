@@ -15,7 +15,7 @@ The **Harshit Developer Portfolio** is an interactive, modern, full-stack develo
 
 ## 2. Active System State
 
-- **Deployment Status:** Production Active on Vercel at [harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app).
+- **Deployment Status:** Production Active on Vercel at [harshit-dev-portfolio-ten.vercel.app](https://harshit-dev-portfolio-ten.vercel.app).
 - **Core Framework:** Next.js 16 (App Router) running on React 19 and TypeScript 5.
 - **Visual & 3D Layer:** Three.js, `@react-three/fiber`, `@react-three/drei`, OGL, Framer Motion, Lenis Smooth Scroll.
 - **Database & Auth:** MongoDB Atlas connected via Mongoose v9, secured with NextAuth.js v5 (JWT session strategy, `@auth/mongodb-adapter`, `bcryptjs`).

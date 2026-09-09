@@ -4,7 +4,7 @@
 **Version:** 1.0.0  
 **Author:** Harshit  
 **Status:** In Production / Active Development  
-**Live Application:** [harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app)  
+**Live Application:** [harshit-dev-portfolio-ten.vercel.app](https://harshit-dev-portfolio-ten.vercel.app)  
 **Repository:** [github.com/harshit-1318/harshit-dev-portfolio](https://github.com/harshit-1318/harshit-dev-portfolio)
 
 ---

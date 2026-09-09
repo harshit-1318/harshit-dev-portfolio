@@ -11,7 +11,7 @@ This file summarizes the personal and professional profile details of Harshit, w
 - **Phone**: +91-7814283095
 - **Website**: https://harshit-kumar.dev
 - **GitHub**: [harshit-1318](https://github.com/harshit-1318)
-- **LinkedIn**: [harshit-kumar](https://www.linkedin.com/in/harshit-kumar)
+- **LinkedIn**: [harshitkumar-dev1318](https://www.linkedin.com/in/harshitkumar-dev1318/)
 
 ## Professional Summary
 Frontend Developer with 9+ months of hands-on experience building production web applications using React.js, TypeScript, Astro, Vite, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components, integrating RESTful APIs, and delivering responsive, accessible user interfaces. Seeking to bring strong React fundamentals and real production experience to a growing frontend team.

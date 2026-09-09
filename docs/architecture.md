@@ -169,7 +169,7 @@ graph LR
     Vercel --> Build[Next.js Build & Lint Check]
     Build --> Test[Environment & Route Compilation]
     Test --> Deploy[Vercel Edge & Serverless Deployment]
-    Deploy --> Live[Live Site: harshit-dev-portfolio.vercel.app]
+    Deploy --> Live[Live Site: harshit-dev-portfolio-ten.vercel.app]
 ```
 
 1. **Version Control:** Managed via GitHub repository `harshit-1318/harshit-dev-portfolio`.

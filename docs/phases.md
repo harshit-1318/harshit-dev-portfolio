@@ -86,7 +86,7 @@ gantt
 - [x] Configure SEO metadata, Open Graph cards, Twitter metadata, and structured JSON-LD schemas.
 - [x] Run linting (`npm run lint`), type checking (`npx tsc --noEmit`), and production build verification (`npm run build`).
 - [x] Connect GitHub repository `harshit-1318/harshit-dev-portfolio` to Vercel CI/CD.
-- [x] Launch production live application at [harshit-dev-portfolio.vercel.app](https://harshit-dev-portfolio.vercel.app).
+- [x] Launch production live application at [harshit-dev-portfolio-ten.vercel.app](https://harshit-dev-portfolio-ten.vercel.app).
 
 ---
 
