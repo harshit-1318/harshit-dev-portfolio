@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import ContactMessage from '@/models/ContactMessage'
+import ContactMessage from '@/models/contact'
 import mongoose from 'mongoose'
 
 type RouteContext = { params: Promise<{ id: string }> }
@@ -41,7 +41,7 @@ export async function PUT(req: NextRequest, { params }: RouteContext) {
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: RouteContext) {
+export async function DELETE(_req: NextRequest, { params }: RouteContext) {
   try {
     const session = await auth()
     if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

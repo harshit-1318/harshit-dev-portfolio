@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   GLASS & CARD SYSTEM
+   CARDS — Surface, Glass, Project & Blog Orbit Cards
    ══════════════════════════════════════════════════════ */
 
 /* ── Navigation Glass ── */
@@ -53,4 +53,216 @@
 .glass-card > *,
 .glass-panel > * {
   transform: translateZ(12px);
+}
+
+/* ── Project Case Card ── */
+
+.project-case-card {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.project-visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 70% 20%, color-mix(in srgb, var(--spatial-cyan) 24%, transparent), transparent 35%),
+    linear-gradient(145deg, #17162a, #0a0b14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 24px 44px rgba(0, 0, 0, 0.28);
+  transform: translateZ(30px) rotateX(1.5deg);
+  transform-origin: center bottom;
+  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
+}
+
+.project-case-card:hover .project-visual {
+  transform: translateZ(46px) rotateX(-1deg) scale(1.012);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 32px 58px rgba(0, 0, 0, 0.36),
+    0 0 34px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.project-visual img {
+  padding-top: 30px;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+}
+
+.project-case-card:hover .project-visual img {
+  transform: scale(1.035);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+/* ── Project Chrome & Fallback ── */
+
+.project-visual__chrome {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.48);
+  background: rgba(8, 9, 17, 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.project-visual__chrome span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.project-visual__chrome span:first-child { background: #ff7a91; }
+.project-visual__chrome span:nth-child(2) { background: #f7c76b; }
+.project-visual__chrome span:nth-child(3) { background: #72ddb1; }
+
+.project-visual__chrome small {
+  overflow: hidden;
+  margin-left: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-visual__fallback {
+  position: absolute;
+  inset: 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.3rem;
+  background:
+    linear-gradient(145deg, transparent, color-mix(in srgb, var(--spatial-violet) 22%, transparent)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(rgba(255,255,255,0.035) 0 1px, transparent 1px 32px);
+}
+
+.project-visual__fallback span {
+  color: var(--spatial-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-visual__fallback strong {
+  margin-top: 0.35rem;
+  color: #fff;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  letter-spacing: -0.04em;
+}
+
+/* ── Blog Orbit Card ── */
+
+.blog-orbit-card {
+  display: grid;
+  min-height: 430px;
+  grid-template-rows: 180px 1fr;
+}
+
+.blog-orbit-card__visual {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at 68% 42%, color-mix(in srgb, var(--spatial-cyan) 26%, transparent), transparent 30%),
+    linear-gradient(145deg, color-mix(in srgb, var(--spatial-violet) 24%, #10121f), #090a12 72%);
+  transform: translateZ(28px);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-orbit-card__visual.is-linkedin {
+  background:
+    radial-gradient(circle at 68% 42%, rgba(61, 151, 240, 0.35), transparent 30%),
+    linear-gradient(145deg, rgba(10, 102, 194, 0.34), #080b12 72%);
+}
+
+.blog-orbit-card:hover .blog-orbit-card__visual {
+  transform: translateZ(44px) scale(1.015);
+}
+
+.blog-orbit-card__rings {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -20px;
+  top: -70px;
+  transform-style: preserve-3d;
+  animation: blog-rings 18s linear infinite;
+}
+
+.blog-orbit-card__rings span {
+  position: absolute;
+  inset: 18%;
+  border: 1px solid color-mix(in srgb, var(--spatial-violet) 55%, transparent);
+  border-radius: 50%;
+  transform: rotateX(65deg) rotateY(12deg);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--spatial-violet) 12%, transparent);
+}
+
+.blog-orbit-card__rings span:nth-child(2) {
+  inset: 29%;
+  transform: rotateY(68deg) rotateX(20deg);
+}
+
+.blog-orbit-card__rings span:nth-child(3) {
+  inset: 40%;
+  border-color: color-mix(in srgb, var(--spatial-cyan) 70%, transparent);
+  transform: rotateZ(35deg);
+}
+
+@keyframes blog-rings {
+  to { transform: rotate(360deg); }
+}
+
+.blog-orbit-card__source {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 14px 30px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.blog-orbit-card__index {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.3rem;
+  color: rgba(255, 255, 255, 0.34);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+/* ── Card Badges ── */
+
+.linkedin-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(10, 102, 194, 0.3);
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  color: #4ea1f3;
+  background: rgba(10, 102, 194, 0.1);
+  font-size: 0.7rem;
+  font-weight: 600;
 }

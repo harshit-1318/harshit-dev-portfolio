@@ -41,16 +41,16 @@ async function seed() {
     console.log("Connected to MongoDB");
 
     // Import models
-    const User = (await import("../src/models/User")).default;
-    const Project = (await import("../src/models/Project")).default;
-    const Certificate = (await import("../src/models/Certificate")).default;
-    const Experience = (await import("../src/models/Experience")).default;
-    const Skill = (await import("../src/models/Skill")).default;
-    const Profile = (await import("../src/models/Profile")).default;
-    const Resume = (await import("../src/models/Resume")).default;
-    const Education = (await import("../src/models/Education")).default;
-    const Blog = (await import("../src/models/Blog")).default;
-    const JobPost = (await import("../src/models/JobPost")).default;
+    const User = (await import("../src/models/user")).default;
+    const Project = (await import("../src/models/project")).default;
+    const Certificate = (await import("../src/models/certificate")).default;
+    const Experience = (await import("../src/models/experience")).default;
+    const Skill = (await import("../src/models/skill")).default;
+    const Profile = (await import("../src/models/profile")).default;
+    const Resume = (await import("../src/models/resume")).default;
+    const Education = (await import("../src/models/education")).default;
+    const Blog = (await import("../src/models/blog")).default;
+    const JobPost = (await import("../src/models/job")).default;
 
     let adminData = { ...defaultAdminData };
     let profileData = { ...defaultProfileData };

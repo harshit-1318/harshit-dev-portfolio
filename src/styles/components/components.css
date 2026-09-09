@@ -1,0 +1,12 @@
+/* ══════════════════════════════════════════════════════
+   COMPONENTS — Modular Entry Point
+   ══════════════════════════════════════════════════════ */
+
+@import "./variables.css";
+@import "./cards.css";
+@import "./buttons.css";
+@import "./primary-btn.css";
+@import "./badges.css";
+@import "./inputs.css";
+@import "./animations.css";
+@import "./footer.css";

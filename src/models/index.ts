@@ -1,36 +1,11 @@
-export { default as User } from './User';
-export type { IUserDoc } from './User';
-
-export { default as Profile } from './Profile';
-export type { IProfileDoc } from './Profile';
-
-export { default as Project } from './Project';
-export type { IProjectDoc, ProjectCategory } from './Project';
-export { PROJECT_CATEGORIES } from './Project';
-
-export { default as Certificate } from './Certificate';
-export type { ICertificateDoc } from './Certificate';
-
-export { default as Experience } from './Experience';
-export type { IExperienceDoc, ExperienceType } from './Experience';
-export { EXPERIENCE_TYPES } from './Experience';
-
-export { default as Skill } from './Skill';
-export type { ISkillDoc } from './Skill';
-
-export { default as JobPost } from './JobPost';
-export type { IJobPostDoc, JobType, JobStatus } from './JobPost';
-export { JOB_TYPES, JOB_STATUSES } from './JobPost';
-
-export { default as Blog } from './Blog';
-export type { IBlogDoc } from './Blog';
-
-export { default as ContactMessage } from './ContactMessage';
-export type { IContactMessageDoc } from './ContactMessage';
-
-export { default as Resume } from './Resume';
-export type { IResumeDoc, IResumeHighlights } from './Resume';
-
-export { default as Education } from './Education';
-export type { IEducationDoc } from './Education';
-
+export { User, type IUserDoc, type UserRole, USER_ROLES } from './user';
+export { Profile, type IProfileDoc, type IProfile } from './profile';
+export { Project, type IProjectDoc, type IProject, type ProjectCategory, PROJECT_CATEGORIES } from './project';
+export { Certificate, type ICertificateDoc, type ICertificate } from './certificate';
+export { Experience, type IExperienceDoc, type IExperience, type ExperienceType, EXPERIENCE_TYPES } from './experience';
+export { Skill, type ISkillDoc, type ISkill } from './skill';
+export { JobPost, type IJobPostDoc, type IJobPost, type JobType, type JobStatus, JOB_TYPES, JOB_STATUSES } from './job';
+export { Blog, type IBlogDoc, type IBlog } from './blog';
+export { ContactMessage, type IContactMessageDoc, type IContactMessage } from './contact';
+export { Resume, type IResumeDoc, type IResume, type IResumeHighlights } from './resume';
+export { Education, type IEducationDoc, type IEducation } from './education';

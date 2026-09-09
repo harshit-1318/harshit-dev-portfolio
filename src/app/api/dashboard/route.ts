@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import dbConnect from '@/lib/db';
-import Project from '@/models/Project';
-import Certificate from '@/models/Certificate';
-import Experience from '@/models/Experience';
-import Skill from '@/models/Skill';
-import ContactMessage from '@/models/ContactMessage';
+import Project from '@/models/project';
+import Certificate from '@/models/certificate';
+import Experience from '@/models/experience';
+import Skill from '@/models/skill';
+import ContactMessage from '@/models/contact';
 
 export async function GET() {
   try {

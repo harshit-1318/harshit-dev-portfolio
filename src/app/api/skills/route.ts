@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import Skill from '@/models/Skill'
+import Skill from '@/models/skill'
 
 export async function GET() {
   try {

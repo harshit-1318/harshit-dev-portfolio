@@ -1,0 +1,9 @@
+/* ══════════════════════════════════════════════════════
+   SPATIAL — Modular Entry Point
+   Imports spatial background sub-modules from ./
+   ══════════════════════════════════════════════════════ */
+
+@import "./grid.css";
+@import "./world.css";
+@import "./aurora.css";
+@import "./orbs.css";

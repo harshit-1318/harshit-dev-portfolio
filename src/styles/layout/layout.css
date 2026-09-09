@@ -1,0 +1,11 @@
+/* ══════════════════════════════════════════════════════
+   LAYOUT — Modular Entry Point
+   Imports layout sub-modules from ./
+   ══════════════════════════════════════════════════════ */
+
+@import "./navbar.css";
+@import "./hero.css";
+@import "./hero-stage.css";
+@import "./hero-decorations.css";
+@import "./sections.css";
+@import "./responsive.css";

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import ContactMessage from '@/models/ContactMessage'
+import ContactMessage from '@/models/contact'
 
 export async function GET() {
   try {

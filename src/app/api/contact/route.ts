@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
-import ContactMessage from '@/models/ContactMessage'
-import { sendContactNotificationEmail } from '@/lib/nodemailer'
+import ContactMessage from '@/models/contact'
+import { sendContactNotificationEmail } from '@/lib/email/nodemailer'
 
 export async function POST(req: NextRequest) {
   try {

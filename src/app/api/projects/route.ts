@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import Project from '@/models/Project'
+import Project from '@/models/project'
 
 export async function GET(req: NextRequest) {
   try {

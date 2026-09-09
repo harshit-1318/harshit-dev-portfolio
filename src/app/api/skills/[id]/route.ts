@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import Skill from '@/models/Skill'
+import Skill from '@/models/skill'
 
 type RouteContext = { params: Promise<{ id: string }> }
 
-export async function GET(req: NextRequest, { params }: RouteContext) {
+export async function GET(_req: NextRequest, { params }: RouteContext) {
   try {
     const { id } = await params
     await dbConnect()
@@ -48,7 +48,7 @@ export async function PUT(req: NextRequest, { params }: RouteContext) {
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: RouteContext) {
+export async function DELETE(_req: NextRequest, { params }: RouteContext) {
   try {
     const session = await auth()
     if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

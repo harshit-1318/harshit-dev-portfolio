@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import dbConnect from '@/lib/db'
 import { auth } from '@/lib/auth'
-import Certificate from '@/models/Certificate'
+import Certificate from '@/models/certificate'
 
 export async function GET() {
   try {

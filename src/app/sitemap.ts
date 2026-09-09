@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import dbConnect from "@/lib/db";
-import Blog from "@/models/Blog";
-import Project from "@/models/Project";
+import Blog from "@/models/blog";
+import Project from "@/models/project";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://harshit-dev-portfolio-ten.vercel.app";
