@@ -17,6 +17,41 @@ const PRESET_GRADIENTS = [
   { name: 'Cyber Purple', c1: '#3b82f6', c2: '#a855f7' },
 ];
 
+function ColorPickerInput({
+  label,
+  value,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  value: string;
+  onChange: (val: string) => void;
+  placeholder: string;
+}) {
+  return (
+    <div className="space-y-2">
+      <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
+        {label}
+      </label>
+      <div className="flex items-center gap-3">
+        <input
+          type="color"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-12 h-10 bg-muted/60 border border-border/80 rounded-xl cursor-pointer p-1 transition-transform hover:scale-105"
+        />
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="flex-1 px-3.5 py-2.5 bg-muted/40 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-foreground uppercase font-mono text-sm transition-all"
+          placeholder={placeholder}
+        />
+      </div>
+    </div>
+  );
+}
+
 export function BrandingForm({ profile, setProfile }: BrandingFormProps) {
   const color1 = profile.logoColor1 || '#6366f1';
   const color2 = profile.logoColor2 || '#22d3ee';
@@ -86,47 +121,18 @@ export function BrandingForm({ profile, setProfile }: BrandingFormProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="space-y-2">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
-            Gradient Primary Color (Hex)
-          </label>
-          <div className="flex items-center gap-3">
-            <input
-              type="color"
-              value={color1}
-              onChange={(e) => setProfile({ ...profile, logoColor1: e.target.value })}
-              className="w-12 h-10 bg-muted/60 border border-border/80 rounded-xl cursor-pointer p-1 transition-transform hover:scale-105"
-            />
-            <input
-              type="text"
-              value={color1}
-              onChange={(e) => setProfile({ ...profile, logoColor1: e.target.value })}
-              className="flex-1 px-3.5 py-2.5 bg-muted/40 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-foreground uppercase font-mono text-sm transition-all"
-              placeholder="#6366f1"
-            />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wider">
-            Gradient Secondary Color (Hex)
-          </label>
-          <div className="flex items-center gap-3">
-            <input
-              type="color"
-              value={color2}
-              onChange={(e) => setProfile({ ...profile, logoColor2: e.target.value })}
-              className="w-12 h-10 bg-muted/60 border border-border/80 rounded-xl cursor-pointer p-1 transition-transform hover:scale-105"
-            />
-            <input
-              type="text"
-              value={color2}
-              onChange={(e) => setProfile({ ...profile, logoColor2: e.target.value })}
-              className="flex-1 px-3.5 py-2.5 bg-muted/40 border border-border/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary text-foreground uppercase font-mono text-sm transition-all"
-              placeholder="#22d3ee"
-            />
-          </div>
-        </div>
+        <ColorPickerInput
+          label="Gradient Primary Color (Hex)"
+          value={color1}
+          onChange={(val) => setProfile({ ...profile, logoColor1: val })}
+          placeholder="#6366f1"
+        />
+        <ColorPickerInput
+          label="Gradient Secondary Color (Hex)"
+          value={color2}
+          onChange={(val) => setProfile({ ...profile, logoColor2: val })}
+          placeholder="#22d3ee"
+        />
       </div>
 
       {/* Real-time Component Preview Mockup */}

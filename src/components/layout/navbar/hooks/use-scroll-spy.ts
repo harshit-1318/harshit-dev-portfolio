@@ -2,14 +2,33 @@ import { useEffect, useLayoutEffect, useState, useRef } from "react";
 
 const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
+export const NAV_SECTIONS = [
+  "hero",
+  "about",
+  "experience",
+  "services",
+  "skills",
+  "projects",
+  "certificates",
+  "contact",
+] as const;
+
 export function useNavbarScrollSpy(pathname: string | null) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeHash, setActiveHash] = useState("hero");
   const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 24);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -18,26 +37,15 @@ export function useNavbarScrollSpy(pathname: string | null) {
   useIsomorphicLayoutEffect(() => {
     if (pathname !== "/") return;
 
-    const sections = [
-      "hero",
-      "about",
-      "experience",
-      "services",
-      "skills",
-      "projects",
-      "certificates",
-      "contact",
-    ];
-
     // Determine initial section from URL hash or sessionStorage on reload
     let initialSection = "";
     if (typeof window !== "undefined") {
       const rawHash = window.location.hash.replace("#", "").replace("/", "").trim();
-      if (rawHash && sections.includes(rawHash)) {
+      if (rawHash && NAV_SECTIONS.includes(rawHash as typeof NAV_SECTIONS[number])) {
         initialSection = rawHash;
       } else {
         const savedSection = sessionStorage.getItem("portfolio_last_section");
-        if (savedSection && sections.includes(savedSection)) {
+        if (savedSection && NAV_SECTIONS.includes(savedSection as typeof NAV_SECTIONS[number])) {
           initialSection = savedSection;
         }
       }
@@ -51,7 +59,7 @@ export function useNavbarScrollSpy(pathname: string | null) {
         const el = document.getElementById(initialSection);
         if (el) {
           const yOffset = -80;
-          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
           window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
           window.history.replaceState(null, "", `/#${initialSection}`);
         }
@@ -63,12 +71,16 @@ export function useNavbarScrollSpy(pathname: string | null) {
       // Double-check on next frame after DOM layout completes
       const frameId = requestAnimationFrame(() => {
         scrollToTarget();
-        setTimeout(() => {
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
           isScrollingRef.current = false;
         }, 200);
       });
 
-      return () => cancelAnimationFrame(frameId);
+      return () => {
+        cancelAnimationFrame(frameId);
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      };
     } else {
       setActiveHash("hero");
     }
@@ -77,18 +89,9 @@ export function useNavbarScrollSpy(pathname: string | null) {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const sections = [
-      "hero",
-      "about",
-      "experience",
-      "services",
-      "skills",
-      "projects",
-      "certificates",
-      "contact",
-    ];
+    let ticking = false;
 
-    const handleScrollSpy = () => {
+    const performScrollSpy = () => {
       if (isScrollingRef.current) return;
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -109,7 +112,7 @@ export function useNavbarScrollSpy(pathname: string | null) {
       const offsetHeader = 150;
       let matchedSection = "hero";
 
-      for (const id of sections) {
+      for (const id of NAV_SECTIONS) {
         const el = document.getElementById(id);
         if (el) {
           const top = el.offsetTop;
@@ -129,6 +132,16 @@ export function useNavbarScrollSpy(pathname: string | null) {
             window.history.replaceState(null, "", `/#${matchedSection}`);
           }
         }
+      }
+    };
+
+    const handleScrollSpy = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          performScrollSpy();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
