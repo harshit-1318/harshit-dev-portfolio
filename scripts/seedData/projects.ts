@@ -1,42 +1,76 @@
 export const projectsData = [
   {
-    title: "YourMedicals Prescriber Portal",
-    slug: "yourmedicals-portal",
-    description: "Engineered frontend modules of a live healthcare prescriber portal for a UK-based client, delivering reusable components and responsive layouts.",
-    longDescription: "Engineered the frontend of the production-ready YourMedicals Prescriber Portal for a UK-based healthcare client, delivering reusable components, responsive layouts, and a seamless user experience. Architected secure REST API integrations using Axios and TanStack Query, streamlining data fetching and state management to boost application performance and reliability.",
-    techStack: ["Astro", "React.js", "TypeScript", "Tailwind CSS", "Axios", "TanStack Query"],
+    title: "MediPulse Portal",
+    slug: "medipulse-portal",
+    description: "A multi-tenant healthcare and pharmacy management platform implementing multi-tenant routing, 8-tier RBAC, JWT authentication, and a 7-stage order lifecycle.",
+    longDescription: "Developed a multi-tenant healthcare and pharmacy management platform using Next.js, React, and TypeScript, implementing multi-tenant routing, 8-tier RBAC, JWT authentication, and a 7-stage order lifecycle. Implemented clinical surveys using SurveyJS, integrated TanStack Table for filtering, sorting, and pagination, and maintained 480+ unit/integration tests using Vitest.",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "MongoDB", "Mongoose", "Zustand", "TanStack Query", "TanStack Table", "Tailwind CSS", "SurveyJS", "Vitest"],
     features: [
-      "Production-ready healthcare prescriber portal for UK client",
-      "Reusable UI components and responsive layouts ensuring cross-device consistency",
-      "Secure REST API integrations with optimized data fetching/caching",
-      "Seamless user experience and robust state management"
+      "Multi-tenant routing isolating clinic and pharmacy tenant spaces",
+      "Granular 8-tier RBAC security with JWT session handling",
+      "Dynamic clinical questionnaires powered by SurveyJS",
+      "Interactive data tables for managing 7-stage order lifecycles",
+      "Comprehensive test coverage with 480+ unit and integration tests using Vitest"
     ],
-    githubUrl: "",
+    githubUrl: "https://github.com/harshit-1318",
     liveUrl: "",
-    category: "WebApp",
+    category: "FullStack",
     featured: true,
     order: 1,
-    image: "/yourmedicals_preview.png",
+    image: "/medipulse_preview.png",
     metrics: {
-      latency: "120ms (API)",
-      efficiency: "40% faster data fetching",
-      components: "30+ reusable UI components",
-      testCoverage: "95% layout consistency"
+      latency: "115ms (API)",
+      efficiency: "480+ unit/integration tests",
+      components: "8-tier RBAC & multi-tenant",
+      testCoverage: "7-stage order lifecycle"
     },
-    challenges: "Integrating real-time medical prescriber data while maintaining low-latency layout rendering and state synchronization across multiple views.",
-    solutions: "Implemented caching and prefetching strategies with TanStack Query. Built modular React components styled with Tailwind CSS, compiled using Vite to ensure optimal browser execution speeds.",
+    challenges: "Handling multi-tenant clinical routing, strict role-based access control across 8 user tiers, and managing complex patient order state.",
+    solutions: "Designed multi-tenant routing architecture with Next.js 16 and Zustand. Integrated SurveyJS for dynamic medical questionnaires, TanStack Table for real-time order workflows, and maintained 480+ unit/integration tests using Vitest.",
     architectureSteps: [
-      { title: "Layout Construction", description: "Vite compiles React/Astro pages with Tailwind CSS utility styles." },
-      { title: "API Integration", description: "Axios requests securely fetch prescriber data from the backend portal." },
-      { title: "Data Caching", description: "TanStack Query handles caching and automated validation of clinical endpoints." },
-      { title: "Component Rendering", description: "Modular UI elements dynamically render patient dashboards and order workflows." }
+      { title: "Multi-Tenant Routing", description: "Next.js App Router isolates pharmacy and healthcare clinic tenant namespaces." },
+      { title: "8-Tier RBAC & Auth", description: "JWT-secured middleware validates permission tokens across 8 healthcare roles." },
+      { title: "Clinical Surveys & Data Tables", description: "SurveyJS powers clinical intake forms while TanStack Table manages 7-stage order lifecycles." },
+      { title: "Automated Testing Suite", description: "Maintained 480+ unit and integration tests using Vitest to guarantee clinical compliance." }
+    ]
+  },
+  {
+    title: "SolarShare",
+    slug: "solarshare",
+    description: "A peer-to-peer solar energy trading platform with role-based workflows, dashboards, wallet/transactions, JWT authentication, and real-time updates using Socket.IO.",
+    longDescription: "Built a peer-to-peer solar energy trading platform with role-based workflows, dashboards, wallet/transactions, JWT authentication, and real-time updates using Socket.IO.",
+    techStack: ["MERN", "Vite", "Tailwind CSS", "Mongoose", "Socket.IO", "JWT"],
+    features: [
+      "Real-time bid-ask matching for renewable solar energy trading",
+      "Sub-50ms live order book updates powered by Socket.IO WebSockets",
+      "Role-based workflows for producers, consumers, and grid managers",
+      "Secure digital energy wallet and ledger transactions"
+    ],
+    githubUrl: "https://github.com/harshit-1318",
+    liveUrl: "",
+    category: "FullStack",
+    featured: true,
+    order: 2,
+    image: "/solarshare_preview.png",
+    metrics: {
+      latency: "Sub-50ms Socket.IO",
+      efficiency: "Real-time P2P energy trades",
+      components: "Role-based dashboards & wallet",
+      testCoverage: "JWT secured transactions"
+    },
+    challenges: "Delivering real-time bid-ask matching for renewable energy units without polling latency.",
+    solutions: "Implemented bi-directional WebSockets via Socket.IO for live order books and integrated secure wallet transaction ledgers with Mongoose schemas.",
+    architectureSteps: [
+      { title: "Real-time WebSocket Feed", description: "Socket.IO synchronizes energy bid orders and price fluctuations in real time." },
+      { title: "Role-Based Workflows", description: "Custom dashboards for energy producers, consumers, and grid operators." },
+      { title: "Digital Energy Wallet", description: "JWT-secured transactions record energy credit transfers on MongoDB." },
+      { title: "Vite Client Interface", description: "Fast responsive Tailwind CSS interface designed for desktop and mobile trade." }
     ]
   },
   {
     title: "EventElite",
     slug: "eventelite",
     description: "A full-stack event management platform with secure authentication, event creation, registration, and user management.",
-    longDescription: "Developed a full-stack event management platform with secure authentication, event creation, registration, and user management features.",
+    longDescription: "Developed a full-stack event management platform with authentication, event creation, registrations, and user management.",
     techStack: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
     features: [
       "Secure user authentication and role-based access control",
@@ -48,7 +82,7 @@ export const projectsData = [
     liveUrl: "",
     category: "FullStack",
     featured: true,
-    order: 2,
+    order: 3,
     image: "/eventelite_preview.png",
     metrics: {
       latency: "90ms",
@@ -67,7 +101,7 @@ export const projectsData = [
     title: "RentNest",
     slug: "rentnest",
     description: "An Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
-    longDescription: "Built an Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
+    longDescription: "Developed an Airbnb-inspired rental platform with authentication, property listings, bookings, and review management.",
     techStack: ["Node.js", "Express.js", "MongoDB", "EJS"],
     features: [
       "Comprehensive property listing creation with image uploads",
@@ -79,7 +113,7 @@ export const projectsData = [
     liveUrl: "",
     category: "FullStack",
     featured: true,
-    order: 3,
+    order: 4,
     image: "/rentnest_preview.png",
     metrics: {
       latency: "110ms",

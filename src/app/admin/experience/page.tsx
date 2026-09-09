@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { ExperienceManager } from '@/components/admin/experience/experience-manager';
+import { ExperienceManager } from '@/components/admin/experience';
 
 export default function AdminExperiencePage() {
   const { data: session } = useSession();

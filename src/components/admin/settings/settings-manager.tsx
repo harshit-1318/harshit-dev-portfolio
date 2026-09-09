@@ -1,11 +1,11 @@
 "use client";
 
 import { Save, Loader2, RotateCcw, Sparkles } from 'lucide-react';
-import { PersonalDetailsForm } from './personal-details-form';
-import { BrandingForm } from './branding-form';
-import { IntegrationsForm } from './integrations-form';
-import { SettingsHeader } from './settings-header';
-import { useSettingsManager } from './use-settings-manager';
+import { PersonalDetailsForm } from './components/personal-details-form';
+import { BrandingForm } from './components/branding-form';
+import { IntegrationsForm } from './components/integrations-form';
+import { SettingsHeader } from './components/header';
+import { useSettingsManager } from './hooks/use-settings-manager';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function SettingsManager() {

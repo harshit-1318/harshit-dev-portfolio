@@ -1,35 +1,63 @@
 [
   {
-    "id": "yourmedicals-portal",
-    "title": "YourMedicals Prescriber Portal",
-    "subtitle": "Live Healthcare Platform Frontend",
-    "description": "An enterprise healthcare prescriber portal featuring real-time clinical workflows, order management dashboards, and responsive patient interfaces.",
-    "stack": ["Astro", "React.js", "TypeScript", "Tailwind CSS", "Axios", "TanStack Query"],
-    "role": "Frontend Developer",
+    "id": "medipulse-portal",
+    "title": "MediPulse Portal",
+    "subtitle": "Multi-Tenant Healthcare & Pharmacy Management System",
+    "description": "Developed a multi-tenant healthcare and pharmacy management platform using Next.js, React, and TypeScript, implementing multi-tenant routing, 8-tier RBAC, JWT authentication, and a 7-stage order lifecycle.",
+    "stack": ["Next.js 16", "React 19", "TypeScript", "MongoDB", "Mongoose", "Zustand", "TanStack Query", "TanStack Table", "Tailwind CSS", "SurveyJS", "Vitest"],
+    "role": "Lead Frontend & Full Stack Developer",
     "year": "2026",
-    "link": "",
-    "image": "/yourmedicals_preview.png",
+    "link": "https://github.com/harshit-1318",
+    "githubUrl": "https://github.com/harshit-1318",
+    "image": "/medipulse_preview.png",
     "highlight": true,
     "metrics": {
-      "latency": "120ms (API)",
-      "efficiency": "40% faster data fetching",
-      "components": "30+ reusable UI components",
-      "testCoverage": "95% layout consistency"
+      "latency": "115ms (API)",
+      "efficiency": "480+ unit/integration tests",
+      "components": "8-tier RBAC & multi-tenant",
+      "testCoverage": "7-stage order lifecycle"
     },
-    "challenges": "Integrating real-time medical prescriber data while maintaining low-latency layout rendering and state synchronization across multiple views.",
-    "solutions": "Implemented caching and prefetching strategies with TanStack Query. Built modular React components styled with Tailwind CSS, compiled using Vite to ensure optimal browser execution speeds.",
+    "challenges": "Handling multi-tenant clinical routing, strict role-based access control across 8 user tiers, and managing complex patient order state.",
+    "solutions": "Designed multi-tenant routing architecture with Next.js 16 and Zustand. Integrated SurveyJS for dynamic medical questionnaires, TanStack Table for real-time order workflows, and maintained 480+ unit/integration tests using Vitest.",
     "architectureSteps": [
-      { "title": "Layout Construction", "description": "Vite compiles React/Astro pages with Tailwind CSS utility styles." },
-      { "title": "API Integration", "description": "Axios requests securely fetch prescriber data from the backend portal." },
-      { "title": "Data Caching", "description": "TanStack Query handles caching and automated validation of clinical endpoints." },
-      { "title": "Component Rendering", "description": "Modular UI elements dynamically render patient dashboards and order workflows." }
+      { "title": "Multi-Tenant Routing", "description": "Next.js App Router isolates pharmacy and healthcare clinic tenant namespaces." },
+      { "title": "8-Tier RBAC & Auth", "description": "JWT-secured middleware validates permission tokens across 8 healthcare roles." },
+      { "title": "Clinical Surveys & Data Tables", "description": "SurveyJS powers clinical intake forms while TanStack Table manages 7-stage order lifecycles." },
+      { "title": "Automated Testing Suite", "description": "Maintained 480+ unit and integration tests using Vitest to guarantee clinical compliance." }
+    ]
+  },
+  {
+    "id": "solarshare",
+    "title": "SolarShare",
+    "subtitle": "P2P Solar Energy Trading Platform",
+    "description": "Built a peer-to-peer solar energy trading platform with role-based workflows, dashboards, wallet/transactions, JWT authentication, and real-time updates using Socket.IO.",
+    "stack": ["MERN", "Vite", "Tailwind CSS", "Mongoose", "Socket.IO", "JWT"],
+    "role": "Full Stack Developer",
+    "year": "2026",
+    "link": "https://github.com/harshit-1318",
+    "githubUrl": "https://github.com/harshit-1318",
+    "image": "/solarshare_preview.png",
+    "highlight": true,
+    "metrics": {
+      "latency": "Sub-50ms Socket.IO",
+      "efficiency": "Real-time P2P energy trades",
+      "components": "Role-based dashboards & wallet",
+      "testCoverage": "JWT secured transactions"
+    },
+    "challenges": "Delivering real-time bid-ask matching for renewable energy units without polling latency.",
+    "solutions": "Implemented bi-directional WebSockets via Socket.IO for live order books and integrated secure wallet transaction ledgers with Mongoose schemas.",
+    "architectureSteps": [
+      { "title": "Real-time WebSocket Feed", "description": "Socket.IO synchronizes energy bid orders and price fluctuations in real time." },
+      { "title": "Role-Based Workflows", "description": "Custom dashboards for energy producers, consumers, and grid operators." },
+      { "title": "Digital Energy Wallet", "description": "JWT-secured transactions record energy credit transfers on MongoDB." },
+      { "title": "Vite Client Interface", "description": "Fast responsive Tailwind CSS interface designed for desktop and mobile trade." }
     ]
   },
   {
     "id": "eventelite",
     "title": "EventElite",
     "subtitle": "Full-Stack Event Management Platform",
-    "description": "Developed a full-stack event management platform with secure authentication, event creation, registration, and user management features.",
+    "description": "Developed a full-stack event management platform with authentication, event creation, registrations, and user management.",
     "stack": ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
     "role": "Full Stack Developer",
     "year": "2025",
@@ -39,8 +67,9 @@
     "highlight": true,
     "metrics": {
       "latency": "90ms",
-      "security": "JWT & Bcrypt Encryption",
-      "concurrency": "100+ registrations/min"
+      "efficiency": "JWT & Bcrypt Encryption",
+      "components": "100+ registrations/min",
+      "testCoverage": "95% route consistency"
     },
     "challenges": "Managing concurrent event registrations and preventing double-booking errors during high traffic periods.",
     "solutions": "Implemented transaction isolation levels in MySQL queries and optimized database connection pooling.",
@@ -53,8 +82,8 @@
   {
     "id": "rentnest",
     "title": "RentNest",
-    "subtitle": "Airbnb-Inspired Booking Platform",
-    "description": "Built an Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
+    "subtitle": "Airbnb-Inspired Rental Platform",
+    "description": "Developed an Airbnb-inspired rental platform with authentication, property listings, bookings, and review management.",
     "stack": ["Node.js", "Express.js", "MongoDB", "EJS"],
     "role": "Full Stack Developer",
     "year": "2025",
@@ -64,8 +93,9 @@
     "highlight": true,
     "metrics": {
       "latency": "110ms",
-      "dbLookup": "45ms index searches",
-      "coverage": "92% route tests"
+      "efficiency": "45ms index searches",
+      "components": "Modular mongoose schemas",
+      "testCoverage": "92% route tests"
     },
     "challenges": "Developing a dynamic UI using EJS templates while handling complex nested documents for reviews and booking status states.",
     "solutions": "Designed modular mongoose schemas with subdocuments and pre-save hooks to automatically aggregate review ratings.",

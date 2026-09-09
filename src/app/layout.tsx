@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { AnimeBackground } from "@/components/effects/anime-background";
-import { SmoothScrollProvider } from "@/components/effects/smooth-scroll-provider";
-import { ScrollProgress } from "@/components/effects/scroll-progress";
-
-import { Toaster } from "sonner";
-import { ScrollNavButton } from "@/components/effects/scroll-nav-button";
+import { Navbar, Footer } from "@/components/layout";
 import {
+  AnimeBackground,
+  SmoothScrollProvider,
+  ScrollProgress,
+  ScrollNavButton,
   SpatialInteractions,
   SpatialWorld,
-} from "@/components/effects/spatial-world";
+} from "@/components/effects";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Harshit",
   },
   description:
-    "Frontend Developer with 9+ Months of hands-on experience building production web applications using React, TypeScript, Astro, Next.js, and Tailwind CSS.",
+    "Frontend Developer with 1 year of professional experience building production-ready web applications using React.js, TypeScript, JavaScript, Astro, Vite, and Tailwind CSS.",
   keywords: [
     "Harshit",
     "Harshit Kumar",
@@ -39,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Harshit | Frontend Developer",
     description:
-      "Frontend Developer with 9+ Months of hands-on experience building production web applications using React, TypeScript, Astro, Next.js, and Tailwind CSS.",
+      "Frontend Developer with 1 year of professional experience building production-ready web applications using React.js, TypeScript, JavaScript, Astro, Vite, and Tailwind CSS.",
     siteName: "Harshit Portfolio",
   },
 };

@@ -35,6 +35,7 @@ An interactive, modern, and high-performance developer portfolio built with **Ne
 ```
 .
 ├── data/               # Static seed data (projects, blogs, experience, etc.)
+├── docs/               # System architecture, database, design & PRD documentation
 ├── public/             # Static assets, previews, and PDF resume
 ├── scripts/            # Database seeding scripts (`seed.ts`)
 ├── src/
@@ -46,6 +47,25 @@ An interactive, modern, and high-performance developer portfolio built with **Ne
 ├── .env.example        # Environment variables template
 └── package.json
 ```
+
+---
+
+## 📚 Documentation
+
+All comprehensive project guides and architectural specifications are located in the [`docs/`](./docs) directory:
+
+| Document | Description |
+| :--- | :--- |
+| [Architecture](./docs/architecture.md) | High-level system architecture, Jamstack layers, and Mermaid diagrams |
+| [Database](./docs/database.md) | MongoDB schemas, Mongoose models, and ER diagram |
+| [Design System](./docs/design.md) | Typography hierarchy, Tailwind v4 design tokens, and glassmorphism specs |
+| [PRD](./docs/prd.md) | Product Requirement Document, objectives, and functional specifications |
+| [Phases & Roadmap](./docs/phases.md) | Development milestones, sprint achievements, and future deliverables |
+| [Coding Rules](./docs/rules.md) | Development standards, RSC best practices, and Git commit guidelines |
+| [Security Policy](./docs/security.md) | Threat matrix, NextAuth JWT authentication, and vulnerability reporting |
+| [Profile Summary](./docs/PROFILE.md) | Structured developer profile, work experience, and projects overview |
+| [AI Prompts](./docs/prompts.md) | System prompt patterns and agent engineering instructions |
+| [Memory Bank](./docs/memory.md) | Key architectural decisions, gotchas, and technical state tracking |
 
 ---
 

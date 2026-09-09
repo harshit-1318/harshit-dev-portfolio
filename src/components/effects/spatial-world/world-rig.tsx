@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { RoutePalette } from "./spatial-constants";
+import { RoutePalette } from "./constants";
 import { CoreSculpture } from "./core-sculpture";
 import { SecondarySculpture } from "./secondary-sculpture";
 import { FloatingModules } from "./floating-modules";

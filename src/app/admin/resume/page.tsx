@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { ResumeManager } from '@/components/admin/resume/resume-manager';
+import { ResumeManager } from '@/components/admin/resume';
 
 export default function AdminResumePage() {
   const { data: session } = useSession();

@@ -4,9 +4,7 @@ import { useSession, SessionProvider } from 'next-auth/react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AdminSidebar } from '@/components/admin/layout/admin-sidebar';
-import { AdminHeader } from '@/components/admin/layout/admin-header';
-import { AdminLoadingScreen } from '@/components/admin/layout/admin-loading-screen';
+import { AdminSidebar, AdminHeader, AdminLoadingScreen } from '@/components/admin/layout';
 
 function AdminLayoutContent({ children }: { children: React.ReactNode }) {
   const { data: session, status } = useSession();
@@ -20,10 +18,11 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
     }
   }, [status, router, pathname]);
 
-  // Close sidebar on route change (mobile)
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setSidebarOpen(false);
-  }, [pathname]);
+  }
 
   if (pathname === '/admin/login') {
     return <>{children}</>;

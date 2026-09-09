@@ -1,28 +1,28 @@
 {
   "categories": [
     {
-      "name": "Programming Languages",
-      "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"]
+      "name": "Languages",
+      "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"]
     },
     {
       "name": "Frontend",
-      "items": ["React.js", "Astro", "Vite", "Tailwind CSS", "Bootstrap", "React Hooks", "Context API", "Zustand"]
+      "items": ["React.js", "Next.js", "Astro", "Vite", "Tailwind CSS", "Bootstrap", "Framer Motion"]
     },
     {
-      "name": "API & State",
-      "items": ["REST APIs", "Axios", "TanStack Query", "TanStack Table"]
+      "name": "State & Data",
+      "items": ["React Hooks", "Zustand", "TanStack Query", "TanStack Table"]
     },
     {
-      "name": "Backend",
-      "items": ["Node.js", "Express.js", "NestJS"]
+      "name": "Backend & APIs",
+      "items": ["Node.js", "Express.js", "NestJS", "RESTful APIs", "Axios", "JWT", "Socket.IO"]
     },
     {
-      "name": "Database",
-      "items": ["MongoDB", "MySQL"]
+      "name": "Databases",
+      "items": ["MongoDB", "MySQL", "Mongoose"]
     },
     {
-      "name": "Tools",
-      "items": ["Git", "GitHub", "Postman", "Vercel", "Shopify APIs"]
+      "name": "Testing & Tools",
+      "items": ["Vitest", "Unit Testing", "Integration Testing", "Git", "GitHub", "Postman", "Vercel", "Figma"]
     }
   ]
 }

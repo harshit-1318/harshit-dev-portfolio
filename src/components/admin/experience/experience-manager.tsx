@@ -1,9 +1,9 @@
 "use client";
 
-import { ExperienceForm } from './experience-form';
-import { ExperienceList } from './experience-list';
-import { ExperienceHeader } from './experience-header';
-import { useExperienceManager } from './use-experience-manager';
+import { ExperienceForm } from './components/form';
+import { ExperienceList } from './components/list';
+import { ExperienceHeader } from './components/header';
+import { useExperienceManager } from './hooks/use-experience-manager';
 
 export function ExperienceManager() {
   const {

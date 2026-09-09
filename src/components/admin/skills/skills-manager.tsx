@@ -1,9 +1,9 @@
 "use client";
 
-import { SkillsForm } from './skills-form';
-import { SkillsList } from './skills-list';
-import { SkillsHeader } from './skills-header';
-import { useSkillsManager } from './use-skills-manager';
+import { SkillsForm } from './components/form';
+import { SkillsList } from './components/list';
+import { SkillsHeader } from './components/header';
+import { useSkillsManager } from './hooks/use-skills-manager';
 
 export const SKILL_CATEGORIES = [
   'Programming Languages',

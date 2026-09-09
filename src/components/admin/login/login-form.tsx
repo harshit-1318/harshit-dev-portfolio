@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Lock, ArrowRight, AlertCircle, Loader2, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LoginFormFields } from "./login-form-fields";
+import { LoginFormFields } from "./components/form-fields";
 
 export function LoginForm() {
   const router = useRouter();

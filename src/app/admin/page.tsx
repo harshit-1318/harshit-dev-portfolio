@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { DashboardStats } from '@/components/admin/dashboard/dashboard-data';
-import { DashboardStatsGrid } from '@/components/admin/dashboard/dashboard-stats-grid';
-import { DashboardQuickActions } from '@/components/admin/dashboard/dashboard-quick-actions';
-import { DashboardWelcomeBanner } from '@/components/admin/dashboard/dashboard-welcome-banner';
-import { DashboardUnreadAlert } from '@/components/admin/dashboard/dashboard-unread-alert';
-import { DashboardInfoStrip } from '@/components/admin/dashboard/dashboard-info-strip';
+import {
+  type DashboardStats,
+  DashboardStatsGrid,
+  DashboardQuickActions,
+  DashboardWelcomeBanner,
+  DashboardUnreadAlert,
+  DashboardInfoStrip,
+} from '@/components/admin/dashboard';
 
 export default function AdminDashboardPage() {
   const { data: session } = useSession();
@@ -16,22 +18,27 @@ export default function AdminDashboardPage() {
 
   useEffect(() => {
     if (!session) return;
-    fetchStats();
-  }, [session]);
+    let ignore = false;
 
-  const fetchStats = async () => {
-    try {
-      const res = await fetch('/api/dashboard');
-      if (res.ok) {
-        const data = await res.json();
-        setStats(data);
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/dashboard');
+        if (res.ok) {
+          const data = await res.json();
+          if (!ignore) setStats(data);
+        }
+      } catch (error) {
+        if (!ignore) console.error('Failed to fetch dashboard stats:', error);
+      } finally {
+        if (!ignore) setLoading(false);
       }
-    } catch (error) {
-      console.error('Failed to fetch dashboard stats:', error);
-    } finally {
-      setLoading(false);
     }
-  };
+
+    loadStats();
+    return () => {
+      ignore = true;
+    };
+  }, [session]);
 
   if (!session) return null;
 

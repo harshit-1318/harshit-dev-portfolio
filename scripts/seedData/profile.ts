@@ -1,7 +1,7 @@
 export const profileData = {
   name: "Harshit",
   title: "Frontend Developer",
-  bio: "Frontend Developer with 9+ months of hands-on experience building production web applications using React.js, TypeScript, Astro, Vite, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components, integrating RESTful APIs, and delivering responsive, accessible user interfaces.",
+  bio: "Frontend Developer with 1 year of professional experience building production-ready web applications using React.js, TypeScript, JavaScript, Astro, Vite, and Tailwind CSS. Experienced in reusable UI components, RESTful APIs, TanStack Query, data-driven dashboards, and frontend performance optimization.",
   email: "kumarharshit370@gmail.com",
   phone: "+91-7814283095",
   location: "Jalandhar, Punjab, India",

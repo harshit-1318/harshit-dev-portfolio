@@ -1,9 +1,9 @@
 "use client";
 
-import { CertificateForm } from './certificate-form';
-import { CertificateList } from './certificate-list';
-import { CertificateHeader } from './certificate-header';
-import { useCertificateManager } from './use-certificate-manager';
+import { CertificateForm } from './components/form';
+import { CertificateList } from './components/list';
+import { CertificateHeader } from './components/header';
+import { useCertificateManager } from './hooks/use-certificate-manager';
 
 export function CertificateManager() {
   const {

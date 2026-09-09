@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
-import { LoginForm } from '@/components/admin/login/login-form';
+import { LoginForm } from '@/components/admin/login';
 
 /* ── Floating particles (purely decorative) ─────────────────── */
 const PARTICLES = [

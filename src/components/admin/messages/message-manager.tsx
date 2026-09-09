@@ -1,9 +1,9 @@
 "use client";
 
-import { MessageList } from './message-list';
-import { MessageDetail } from './message-detail';
-import { MessageHeader } from './message-header';
-import { useMessageManager } from './use-message-manager';
+import { MessageList } from './components/list';
+import { MessageDetail } from './components/detail';
+import { MessageHeader } from './components/header';
+import { useMessageManager } from './hooks/use-message-manager';
 
 export function MessageManager() {
   const {

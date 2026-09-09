@@ -6,7 +6,7 @@ import Resume from '@/models/Resume';
 export async function GET() {
   try {
     await dbConnect();
-    let resume = await Resume.findOne().lean();
+    const resume = await Resume.findOne().lean();
     if (!resume) {
       // Return default if not found
       return NextResponse.json({

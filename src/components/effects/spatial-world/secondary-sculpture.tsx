@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { RoutePalette } from "./spatial-constants";
+import { RoutePalette } from "./constants";
 
 export function SecondarySculpture({ palette }: { palette: RoutePalette }) {
   const secondaryRef = useRef<THREE.Group>(null);

@@ -4,10 +4,10 @@
     "shortName": "Harshit",
     "tagline": "Frontend Developer",
     "role": "Frontend Developer",
-    "specialization": "React · TypeScript · Astro · Next.js · Tailwind CSS",
+    "specialization": "React.js · Next.js · TypeScript · Astro · Vite · Tailwind CSS",
     "location": "Jalandhar, Punjab, India",
-    "yearsOfExperience": "9+ Months",
-    "bio": "Frontend Developer with 9+ Months of hands-on experience building production web applications using React, TypeScript, Astro, Next.js, and Tailwind CSS. Contributed to a live healthcare prescriber portal for a UK-based client, building reusable UI components and integrating RESTful APIs.",
+    "yearsOfExperience": "1 Year",
+    "bio": "Frontend Developer with 1 year of professional experience building production-ready web applications using React.js, TypeScript, JavaScript, Astro, Vite, and Tailwind CSS. Experienced in reusable UI components, RESTful APIs, TanStack Query, data-driven dashboards, and frontend performance optimization.",
     "avatarSvg": "",
     "social": {
       "github": "https://github.com/harshit-1318",
@@ -23,28 +23,28 @@
   "skills": {
     "categories": [
       {
-        "name": "Programming Languages",
-        "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"]
+        "name": "Languages",
+        "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"]
       },
       {
         "name": "Frontend",
-        "items": ["React.js", "Astro", "Vite", "Tailwind CSS", "Bootstrap", "React Hooks", "Context API", "Zustand"]
+        "items": ["React.js", "Next.js", "Astro", "Vite", "Tailwind CSS", "Bootstrap", "Framer Motion"]
       },
       {
-        "name": "API & State",
-        "items": ["REST APIs", "Axios", "TanStack Query", "TanStack Table"]
+        "name": "State & Data",
+        "items": ["React Hooks", "Zustand", "TanStack Query", "TanStack Table"]
       },
       {
-        "name": "Backend",
-        "items": ["Node.js", "Express.js", "NestJS"]
+        "name": "Backend & APIs",
+        "items": ["Node.js", "Express.js", "NestJS", "RESTful APIs", "Axios", "JWT", "Socket.IO"]
       },
       {
-        "name": "Database",
-        "items": ["MongoDB", "MySQL"]
+        "name": "Databases",
+        "items": ["MongoDB", "MySQL", "Mongoose"]
       },
       {
-        "name": "Tools",
-        "items": ["Git", "GitHub", "Postman", "Vercel", "Shopify APIs"]
+        "name": "Testing & Tools",
+        "items": ["Vitest", "Unit Testing", "Integration Testing", "Git", "GitHub", "Postman", "Vercel", "Figma"]
       }
     ]
   },
@@ -52,48 +52,78 @@
     {
       "company": "CSharma Consultancy",
       "role": "Frontend Developer",
-      "period": "Oct 2025 – June 2026",
+      "period": "Sep 2025 – Aug 2026",
       "location": "Jalandhar, Punjab (On-site)",
-      "summary": "Engineered core modules of the production-ready YourMedicals Prescriber Portal, a live healthcare platform for a UK-based client.",
+      "summary": "Developed and maintained core frontend modules for the production-ready YourMedicals Prescriber Portal, a live healthcare platform for a UK-based client.",
       "highlights": [
-        "Built 30+ reusable, accessible UI components using React.js, TypeScript, Astro, and Tailwind CSS, securing 95% layout consistency across all device viewports for a production-level UK healthcare portal.",
-        "Developed a high-performance Order Management Dashboard using TanStack Table, integrating RESTful APIs via Axios and optimizing state caching with TanStack Query to achieve 40% faster data-fetching speeds.",
-        "Collaborated with cross-functional Agile teams using Git, participating in sprint planning and code reviews to deliver production-ready code with sub-120ms API response latency."
+        "Developed and maintained core frontend modules for the production-ready YourMedicals Prescriber Portal, a live healthcare platform for a UK-based client.",
+        "Developed 20+ scalable, reusable, and responsive UI components using React.js, TypeScript, Astro, Vite, and Tailwind CSS, improving consistency and cross-browser compatibility.",
+        "Translated Figma designs into pixel-perfect, accessible, and responsive interfaces while maintaining reusable component patterns and consistent UI standards.",
+        "Developed an interactive Order Management Dashboard with filtering, sorting, pagination, and search using TanStack Table; integrated 15+ RESTful API endpoints with Axios and managed server state with TanStack Query.",
+        "Collaborated with backend developers, QA engineers, and UI/UX designers in an Agile environment, contributing to sprint planning, code reviews, debugging, testing, and production releases."
       ]
     }
   ],
   "projects": [
     {
-      "id": "yourmedicals-portal",
-      "title": "YourMedicals Prescriber Portal",
-      "subtitle": "Live Healthcare Platform Frontend",
-      "description": "Engineered the frontend of the production-ready YourMedicals Prescriber Portal for a UK-based healthcare client, delivering reusable components, responsive layouts, and a seamless user experience.",
-      "stack": ["Astro", "React.js", "TypeScript", "Tailwind CSS", "Axios", "TanStack Query"],
-      "role": "Frontend Developer",
+      "id": "medipulse-portal",
+      "title": "MediPulse Portal",
+      "subtitle": "Multi-Tenant Healthcare & Pharmacy Management System",
+      "description": "Developed a multi-tenant healthcare and pharmacy management platform using Next.js, React, and TypeScript, implementing multi-tenant routing, 8-tier RBAC, JWT authentication, and a 7-stage order lifecycle.",
+      "stack": ["Next.js 16", "React 19", "TypeScript", "MongoDB", "Mongoose", "Zustand", "TanStack Query", "TanStack Table", "Tailwind CSS", "SurveyJS", "Vitest"],
+      "role": "Lead Frontend & Full Stack Developer",
       "year": "2026",
-      "link": "",
-      "image": "/yourmedicals_preview.png",
+      "link": "https://github.com/harshit-1318",
+      "githubUrl": "https://github.com/harshit-1318",
+      "image": "/medipulse_preview.png",
       "highlight": true,
       "metrics": {
-        "latency": "120ms (API)",
-        "efficiency": "40% faster data fetching",
-        "components": "30+ reusable UI components",
-        "testCoverage": "95% layout consistency"
+        "latency": "115ms (API)",
+        "efficiency": "480+ unit/integration tests",
+        "components": "8-tier RBAC & multi-tenant",
+        "testCoverage": "7-stage order lifecycle"
       },
-      "challenges": "Integrating real-time medical prescriber data while maintaining low-latency layout rendering and state synchronization across multiple views.",
-      "solutions": "Implemented caching and prefetching strategies with TanStack Query. Built modular React components styled with Tailwind CSS, compiled using Vite to ensure optimal browser execution speeds.",
+      "challenges": "Handling multi-tenant clinical routing, strict role-based access control across 8 user tiers, and managing complex patient order state.",
+      "solutions": "Designed multi-tenant routing architecture with Next.js 16 and Zustand. Integrated SurveyJS for dynamic medical questionnaires, TanStack Table for real-time order workflows, and maintained 480+ unit/integration tests using Vitest.",
       "architectureSteps": [
-        { "title": "Layout Construction", "description": "Vite compiles React/Astro pages with Tailwind CSS utility styles." },
-        { "title": "API Integration", "description": "Axios requests securely fetch prescriber data from the backend portal." },
-        { "title": "Data Caching", "description": "TanStack Query handles caching and automated validation of clinical endpoints." },
-        { "title": "Component Rendering", "description": "Modular UI elements dynamically render patient dashboards and order workflows." }
+        { "title": "Multi-Tenant Routing", "description": "Next.js App Router isolates pharmacy and healthcare clinic tenant namespaces." },
+        { "title": "8-Tier RBAC & Auth", "description": "JWT-secured middleware validates permission tokens across 8 healthcare roles." },
+        { "title": "Clinical Surveys & Data Tables", "description": "SurveyJS powers clinical intake forms while TanStack Table manages 7-stage order lifecycles." },
+        { "title": "Automated Testing Suite", "description": "Maintained 480+ unit and integration tests using Vitest to guarantee clinical compliance." }
+      ]
+    },
+    {
+      "id": "solarshare",
+      "title": "SolarShare",
+      "subtitle": "P2P Solar Energy Trading Platform",
+      "description": "Built a peer-to-peer solar energy trading platform with role-based workflows, dashboards, wallet/transactions, JWT authentication, and real-time updates using Socket.IO.",
+      "stack": ["MERN", "Vite", "Tailwind CSS", "Mongoose", "Socket.IO", "JWT"],
+      "role": "Full Stack Developer",
+      "year": "2026",
+      "link": "https://github.com/harshit-1318",
+      "githubUrl": "https://github.com/harshit-1318",
+      "image": "/solarshare_preview.png",
+      "highlight": true,
+      "metrics": {
+        "latency": "Sub-50ms Socket.IO",
+        "efficiency": "Real-time P2P energy trades",
+        "components": "Role-based dashboards & wallet",
+        "testCoverage": "JWT secured transactions"
+      },
+      "challenges": "Delivering real-time bid-ask matching for renewable energy units without polling latency.",
+      "solutions": "Implemented bi-directional WebSockets via Socket.IO for live order books and integrated secure wallet transaction ledgers with Mongoose schemas.",
+      "architectureSteps": [
+        { "title": "Real-time WebSocket Feed", "description": "Socket.IO synchronizes energy bid orders and price fluctuations in real time." },
+        { "title": "Role-Based Workflows", "description": "Custom dashboards for energy producers, consumers, and grid operators." },
+        { "title": "Digital Energy Wallet", "description": "JWT-secured transactions record energy credit transfers on MongoDB." },
+        { "title": "Vite Client Interface", "description": "Fast responsive Tailwind CSS interface designed for desktop and mobile trade." }
       ]
     },
     {
       "id": "eventelite",
       "title": "EventElite",
       "subtitle": "Full-Stack Event Management Platform",
-      "description": "Developed a full-stack event management platform with secure authentication, event creation, registration, and user management features.",
+      "description": "Developed a full-stack event management platform with authentication, event creation, registrations, and user management.",
       "stack": ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL"],
       "role": "Full Stack Developer",
       "year": "2025",
@@ -103,8 +133,9 @@
       "highlight": true,
       "metrics": {
         "latency": "90ms",
-        "security": "JWT & Bcrypt Encryption",
-        "concurrency": "100+ registrations/min"
+        "efficiency": "JWT & Bcrypt Encryption",
+        "components": "100+ registrations/min",
+        "testCoverage": "95% route consistency"
       },
       "challenges": "Managing concurrent event registrations and preventing double-booking errors during high traffic periods.",
       "solutions": "Implemented transaction isolation levels in MySQL queries and optimized database connection pooling.",
@@ -117,8 +148,8 @@
     {
       "id": "rentnest",
       "title": "RentNest",
-      "subtitle": "Airbnb-Inspired Booking Platform",
-      "description": "Built an Airbnb-inspired rental booking platform featuring user authentication, property listings, booking workflows, and review management.",
+      "subtitle": "Airbnb-Inspired Rental Platform",
+      "description": "Developed an Airbnb-inspired rental platform with authentication, property listings, bookings, and review management.",
       "stack": ["Node.js", "Express.js", "MongoDB", "EJS"],
       "role": "Full Stack Developer",
       "year": "2025",
@@ -128,8 +159,9 @@
       "highlight": true,
       "metrics": {
         "latency": "110ms",
-        "dbLookup": "45ms index searches",
-        "coverage": "92% route tests"
+        "efficiency": "45ms index searches",
+        "components": "Modular mongoose schemas",
+        "testCoverage": "92% route tests"
       },
       "challenges": "Developing a dynamic UI using EJS templates while handling complex nested documents for reviews and booking status states.",
       "solutions": "Designed modular mongoose schemas with subdocuments and pre-save hooks to automatically aggregate review ratings.",
@@ -144,7 +176,7 @@
     {
       "institution": "Lovely Professional University",
       "degree": "Master of Computer Applications (MCA)",
-      "location": "Punjab, India (Correspondence)",
+      "location": "Punjab, India (Online)",
       "period": "2025 – 2027",
       "coursework": [
         "Advanced Software Engineering",

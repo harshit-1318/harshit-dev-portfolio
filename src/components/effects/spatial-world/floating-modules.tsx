@@ -1,7 +1,7 @@
 "use client";
 
 import { Float } from "@react-three/drei";
-import { MODULE_POSITIONS } from "./spatial-constants";
+import { MODULE_POSITIONS } from "./constants";
 
 export function FloatingModules({ color }: { color: string }) {
   return (

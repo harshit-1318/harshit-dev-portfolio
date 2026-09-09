@@ -2,7 +2,7 @@ export const educationData = [
   {
     institution: "Lovely Professional University",
     degree: "Master of Computer Applications (MCA)",
-    location: "Punjab, India (Correspondence)",
+    location: "Punjab, India (Online)",
     period: "2025 – 2027",
     coursework: [
       "Advanced Software Engineering",

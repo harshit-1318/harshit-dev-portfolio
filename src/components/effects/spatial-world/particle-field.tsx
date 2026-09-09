@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { PARTICLE_POSITIONS } from "./spatial-constants";
+import { PARTICLE_POSITIONS } from "./constants";
 
 export function ParticleField({ color }: { color: string }) {
   const pointsRef = useRef<THREE.Points>(null);

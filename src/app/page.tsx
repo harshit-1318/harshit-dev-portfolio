@@ -1,14 +1,16 @@
 "use client";
 
 import { usePortfolio } from "@/hooks/usePortfolio";
-import { HeroSection } from "@/components/home/hero";
-import { AboutSection } from "@/components/home/about";
-import { ExperienceSection } from "@/components/home/experience";
-import { ServicesSection } from "@/components/home/services";
-import { SkillsSection } from "@/components/home/skills";
-import { ProjectsSection } from "@/components/home/projects";
-import { CertificatesSection } from "@/components/home/certificates";
-import { ContactSection } from "@/components/home/contact";
+import {
+  HeroSection,
+  AboutSection,
+  ExperienceSection,
+  ServicesSection,
+  SkillsSection,
+  ProjectsSection,
+  CertificatesSection,
+  ContactSection,
+} from "@/components/home";
 
 export default function HomePage() {
   const { data } = usePortfolio();

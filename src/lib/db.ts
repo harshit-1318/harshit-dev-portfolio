@@ -14,9 +14,11 @@ interface MongooseCache {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
   var mongoose: MongooseCache | undefined;
   var isMockDb: boolean | undefined;
+  var isMongoosePatched: boolean | undefined;
+  var originalExec: ((...args: unknown[]) => Promise<unknown>) | undefined;
+  var originalSave: ((...args: unknown[]) => Promise<unknown>) | undefined;
 }
 
 const cached: MongooseCache = global.mongoose || { conn: null, promise: null };
@@ -25,6 +27,7 @@ if (!global.mongoose) {
   global.mongoose = cached;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Monkey-patch Mongoose if we are in mock mode (safe from hot-reloads)
 if (!(global as any).isMongoosePatched) {
   (global as any).originalExec = mongoose.Query.prototype.exec;
@@ -111,6 +114,7 @@ if (!(global as any).isMongoosePatched) {
     return (global as any).originalSave.apply(this, args);
   };
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 async function dbConnect(): Promise<typeof mongoose> {
   if (cached.conn && !global.isMockDb) {
@@ -131,7 +135,7 @@ async function dbConnect(): Promise<typeof mongoose> {
 
   try {
     cached.conn = await cached.promise;
-  } catch (e) {
+  } catch {
     cached.promise = null;
     cached.conn = null;
     console.warn("--------------------------------------------------------------------------------");

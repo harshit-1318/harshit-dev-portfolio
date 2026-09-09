@@ -4,11 +4,11 @@ import { ScrollReveal } from "@/components/effects/scroll-reveal";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { IProfileData, IEducationData } from "@/types/portfolio";
 
-import { AboutBadges } from "./about-badges";
-import { AboutBio } from "./about-bio";
-import { AboutStats } from "./about-stats";
-import { AboutEducation } from "./about-education";
-import { AboutFocus } from "./about-focus";
+import { AboutBadges } from "./components/badges";
+import { AboutBio } from "./components/bio";
+import { AboutStats } from "./components/stats";
+import { AboutEducation } from "./components/education";
+import { AboutFocus } from "./components/focus";
 
 export interface AboutSectionProps {
   profile: IProfileData;

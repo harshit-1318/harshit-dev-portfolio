@@ -7,10 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://harshit-kumar.dev";
 
   // Static routes
-  const staticPaths = [
-    "",
-    "/github",
-  ];
+  const staticPaths = [""];
 
   const staticUrls = staticPaths.map((path) => ({
     url: `${baseUrl}${path}`,
@@ -27,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Fetch dynamic published blogs
     const blogs = await Blog.find({ published: true }).select("slug updatedAt").lean();
-    blogUrls = blogs.map((blog: any) => ({
+    blogUrls = (blogs as Array<{ slug?: string; updatedAt?: Date | string }>).map((blog) => ({
       url: `${baseUrl}/blog/${blog.slug}`,
       lastModified: new Date(blog.updatedAt || Date.now()),
       changeFrequency: "monthly" as const,
@@ -36,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Fetch dynamic projects
     const projects = await Project.find({}).select("slug updatedAt").lean();
-    projectUrls = projects.map((project: any) => ({
+    projectUrls = (projects as Array<{ slug?: string; updatedAt?: Date | string }>).map((project) => ({
       url: `${baseUrl}/projects/${project.slug}`,
       lastModified: new Date(project.updatedAt || Date.now()),
       changeFrequency: "monthly" as const,

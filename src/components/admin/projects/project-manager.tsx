@@ -1,9 +1,9 @@
 "use client";
 
-import { ProjectForm } from './project-form';
-import { ProjectList } from './project-list';
-import { ProjectHeader } from './project-header';
-import { useProjectManager } from './use-project-manager';
+import { ProjectForm } from './components/form';
+import { ProjectList } from './components/list';
+import { ProjectHeader } from './components/header';
+import { useProjectManager } from './hooks/use-project-manager';
 
 export function ProjectManager() {
   const {

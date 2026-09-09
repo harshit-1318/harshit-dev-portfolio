@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { ResumeSettings, type IResumeData } from './resume-settings';
-import { EducationManager } from './education-manager';
-import { ResumeManagerHeader } from './resume-manager-header';
+import { ResumeSettings, type IResumeData } from './components/settings';
+import { EducationManager } from './components/education';
+import { ResumeManagerHeader } from './components/header';
 
 export function ResumeManager() {
   const [loading, setLoading] = useState(true);
@@ -22,23 +22,29 @@ export function ResumeManager() {
     downloadCount: 0,
   });
 
-  const fetchResume = useCallback(async () => {
-    try {
-      const res = await fetch('/api/resume');
-      if (res.ok) {
-        const data = await res.json();
-        setResume(data);
-      }
-    } catch (error) {
-      console.error('Failed to fetch resume settings:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
-    fetchResume();
-  }, [fetchResume]);
+    let ignore = false;
+    async function loadResume() {
+      try {
+        const res = await fetch('/api/resume');
+        if (res.ok) {
+          const data = await res.json();
+          if (!ignore) setResume(data);
+        }
+      } catch (error) {
+        if (!ignore) {
+          console.error('Failed to fetch resume settings:', error);
+        }
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+
+    loadResume();
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -6,7 +6,6 @@ import Certificate from '@/models/Certificate';
 import Experience from '@/models/Experience';
 import Skill from '@/models/Skill';
 import ContactMessage from '@/models/ContactMessage';
-import Education from '@/models/Education';
 
 export async function GET() {
   try {

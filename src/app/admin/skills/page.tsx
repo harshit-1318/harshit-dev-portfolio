@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { SkillsManager } from '@/components/admin/skills/skills-manager';
+import { SkillsManager } from '@/components/admin/skills';
 
 export default function AdminSkillsPage() {
   const { data: session } = useSession();

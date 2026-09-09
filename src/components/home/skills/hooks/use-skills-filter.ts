@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { skillsData } from "../skills-data";
+import { skillsData } from "../data/skills-data";
 import { useWheelScroll } from "./use-wheel-scroll";
 
 const ITEMS_PER_PAGE = 6;
@@ -59,14 +59,19 @@ export function useSkillsFilter() {
 
   const currentPageRef = useRef(1);
   const totalPagesRef = useRef(1);
-  currentPageRef.current = currentPage;
-  totalPagesRef.current = totalPages;
+
+  useEffect(() => {
+    currentPageRef.current = currentPage;
+    totalPagesRef.current = totalPages;
+  }, [currentPage, totalPages]);
 
   const scrollToSkillsTop = () => {
     if (typeof window === "undefined") return;
     const section = document.getElementById("skills");
     if (!section) return;
-    const lenisInstance = (window as any).lenis;
+    const lenisInstance = (window as unknown as {
+      lenis?: { scrollTo?: (target: HTMLElement, options?: { offset?: number }) => void };
+    }).lenis;
     if (lenisInstance && typeof lenisInstance.scrollTo === "function") {
       lenisInstance.scrollTo(section, { offset: -70 });
       return;

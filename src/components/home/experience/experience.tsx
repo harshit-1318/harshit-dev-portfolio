@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ScrollReveal } from "@/components/effects/scroll-reveal";
 import { IExperienceData } from "@/types/portfolio";
 
-import { ExperienceBadges } from "./experience-badges";
-import { ExperienceTechStack } from "./experience-tech-stack";
-import { ExperienceHighlights } from "./experience-highlights";
-import { ExperienceDetailCard } from "./experience-detail-card";
-import { ExperienceTabs } from "./experience-tabs";
+import { ExperienceBadges } from "./components/badges";
+import { ExperienceTechStack } from "./components/tech-stack";
+import { ExperienceHighlights } from "./components/highlights";
+import { ExperienceDetailCard } from "./components/detail-card";
+import { ExperienceTabs } from "./components/tabs";
 
 interface ExperienceSectionProps {
   experience: IExperienceData[];

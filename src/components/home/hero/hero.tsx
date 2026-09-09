@@ -1,13 +1,13 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { HeroIde } from "@/components/effects/hero-ide";
+import { HeroIde } from "@/components/effects";
 import { IProfileData } from "@/types/portfolio";
-import { HeroBackground } from "./hero-background";
-import { HeroTechStack } from "./hero-tech-stack";
-import { HeroSocials } from "./hero-socials";
-import { HeroScrollIndicator } from "./hero-scroll-indicator";
-import { HeroImpactMetrics } from "./hero-impact-metrics";
+import { HeroBackground } from "./components/background";
+import { HeroTechStack } from "./components/tech-stack";
+import { HeroSocials } from "./components/socials";
+import { HeroScrollIndicator } from "./components/scroll-indicator";
+import { HeroImpactMetrics } from "./components/impact-metrics";
 
 interface HeroSectionProps {
   profile: IProfileData;

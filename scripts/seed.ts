@@ -58,7 +58,7 @@ async function seed() {
     let certificatesData = [...defaultCertificatesData];
     let experiencesData = [...defaultExperiencesData];
     let skillsData = [...defaultSkillsData];
-    let blogsData: any[] = [];
+    let blogsData: Record<string, unknown>[] = [];
     let educationData = [...defaultEducationData];
     let resumeData = { ...defaultResumeData };
 
@@ -97,6 +97,7 @@ async function seed() {
     } else {
       existingUser.password = adminData.password;
       existingUser.name = adminData.name;
+      existingUser.role = "admin";
       await existingUser.save();
       console.log("✅ Admin user updated");
     }
