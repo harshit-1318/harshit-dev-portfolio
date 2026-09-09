@@ -1,7 +1,7 @@
-﻿"use client";
+"use client";
 
 import { Award } from "lucide-react";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 
 export function CertificatesHeader() {
   return (

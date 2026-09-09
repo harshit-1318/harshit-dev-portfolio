@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { IProfileData, IEducationData } from "@/types/portfolio";
 

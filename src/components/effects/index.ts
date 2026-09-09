@@ -1,7 +1,21 @@
+// Hero IDE
 export { HeroIde } from "./hero-ide";
-export { SpatialWorld, SpatialInteractions } from "./spatial-world";
-export { AnimeBackground } from "./anime-background";
-export { ScrollNavButton } from "./scroll-nav-button";
-export { ScrollProgress } from "./scroll-progress";
-export { ScrollReveal } from "./scroll-reveal";
-export { SmoothScrollProvider } from "./smooth-scroll-provider";
+
+// Spatial World (3D canvas & interaction)
+export {
+  SpatialWorld,
+  SpatialInteractions,
+  ROUTE_PALETTES,
+  type RoutePalette,
+} from "./spatial-world";
+
+// Scroll Effects
+export {
+  ScrollNavButton,
+  ScrollProgress,
+  ScrollReveal,
+  SmoothScrollProvider,
+} from "./scroll";
+
+// Background Effects
+export { AnimeBackground } from "./backgrounds";

@@ -115,7 +115,7 @@ D:\Main Portfolio\
 │   │   └── page.tsx           # Homepage composition
 │   ├── components/            # Component design system
 │   │   ├── admin/             # Admin dashboard UI modules
-│   │   ├── effects/           # 3D spatial world, Hero IDE, scroll buttons
+│   │   ├── effects/           # 3D spatial world, Hero IDE, scroll & background effects
 │   │   ├── home/              # Hero, About, Experience, Skills, Projects
 │   │   ├── layout/            # Navbar, Footer, Theme toggle
 │   │   ├── shared/            # Section headings, brand SVGs

@@ -1,6 +1,6 @@
 import { Briefcase, MapPin, Calendar, Activity } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { IExperienceData } from "@/types/portfolio";
 import { ExperienceDetailBullets } from "./detail-bullets";

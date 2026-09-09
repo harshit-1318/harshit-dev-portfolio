@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { ProjectBrowserFrame, getDisplayUrl } from "../browser-frame";
 import { CardArchitectureDrawer } from "./architecture-drawer";

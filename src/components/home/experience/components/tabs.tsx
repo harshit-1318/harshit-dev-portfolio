@@ -1,4 +1,4 @@
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { cn } from "@/lib/utils";
 import { IExperienceData } from "@/types/portfolio";
 

@@ -1,4 +1,4 @@
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 
 export function ServicesHeader() {
   return (

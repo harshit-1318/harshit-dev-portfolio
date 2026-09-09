@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { SERVICES_DATA } from "./data/services";
 import { ServicesHeader } from "./components/header";
 import { ServiceCard } from "./components/card";

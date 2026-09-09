@@ -1,7 +1,7 @@
 "use client";
 
 import { User2, MapPin } from "lucide-react";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 
 export function AboutBadges() {
   return (

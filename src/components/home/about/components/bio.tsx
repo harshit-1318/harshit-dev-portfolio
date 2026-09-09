@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 
 export function AboutBio() {
   return (

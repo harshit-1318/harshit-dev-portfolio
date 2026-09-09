@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { MessageSquareText } from "lucide-react";
 
 export function ContactHeader() {

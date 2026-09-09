@@ -1,7 +1,7 @@
 "use client";
 
 import { Award, Building2, ExternalLink, BadgeCheck } from "lucide-react";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import type { ICertificate } from "@/types";
 
 interface CertificateCardProps {

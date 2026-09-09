@@ -1,7 +1,7 @@
 "use client";
 
 import { Briefcase, Code2, Rocket } from "lucide-react";
-import { ScrollReveal } from "@/components/effects/scroll-reveal";
+import { ScrollReveal } from "@/components/effects/scroll";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function AboutStats() {
