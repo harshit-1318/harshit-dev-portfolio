@@ -4,7 +4,7 @@ import Blog from "@/models/Blog";
 import Project from "@/models/Project";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://harshit-kumar.dev";
+  const baseUrl = "https://harshit-dev-portfolio-ten.vercel.app";
 
   // Static routes
   const staticPaths = [""];

@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Frontend Developer",
   description:
     "Frontend Developer specializing in React.js, Next.js, TypeScript, and Tailwind CSS. Dedicated to building high-performance, accessible web applications and data-dense user interfaces.",
-  url: "https://harshit-kumar.dev",
+  url: "https://harshit-dev-portfolio-ten.vercel.app",
   email: "kumarharshit370@gmail.com",
   phone: "+91-7814283095",
   location: "Jalandhar, Punjab, India",

@@ -9,7 +9,7 @@ This file summarizes the personal and professional profile details of Harshit, w
 - **Location**: Jalandhar, Punjab, India
 - **Email**: kumarharshit370@gmail.com
 - **Phone**: +91-7814283095
-- **Website**: https://harshit-kumar.dev
+- **Website**: https://harshit-dev-portfolio-ten.vercel.app
 - **GitHub**: [harshit-1318](https://github.com/harshit-1318)
 - **LinkedIn**: [harshitkumar-dev1318](https://www.linkedin.com/in/harshitkumar-dev1318/)
 
